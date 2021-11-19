@@ -11,55 +11,55 @@
 /* 
  * Principal: Museo500-Regular.otf
  *  */
- @font-face {
-    font-family: Roboto;
-      font-weight: 400;
-    src: url(/wp-content/themes/licenciamento/fonts/Roboto-Regular.ttf);
-  }
-  
-  @font-face {
-    font-family: Roboto;
-      font-weight: 700;
-    src: url(/wp-content/themes/licenciamento/fonts/Roboto-Bold.ttf);
-  }
-  
-  h1, .sistema-label p, .sistema-botao {
-      margin-bottom: 1em;
-      font-family: Roboto;
-      font-weight: 700;
-      color: #fff;
-  }
-  
-  h1 {
-      font-size: 2.4em;
-  }
-  
-  .sistema-label p {
-      font-size: 1.35em;
-      line-height: 1.4em;
-  }
-  
-  .sistema-botao {
-      margin-bottom: 3em !important;
-      background-color: #9ce6df;
-      text-align: center;
-    border-style: solid;
-    border-width: 2px;
-    border-image: linear-gradient(90deg, #517bee, #5cd6c9) 1;
-  }
-  
-  .sistema-botao a {
-      padding: 20px 0;
-      width: 100%;
-      font-size: 1.15em;
-      color: #0a3299;
-  }
-  
-  .sistema-label a {
-      color: #fff;
-      text-decoration: underline;
-  }
-  
-  .sistema-label a:visited {
-      color: #517bee;
-  }
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  src: url(/wp-content/themes/licenciamento/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 700;
+  src: url(/wp-content/themes/licenciamento/fonts/Roboto-Bold.ttf);
+}
+
+h1, .sistema-label p, .sistema-botao {
+  margin-bottom: 1em;
+  font-family: Roboto;
+  font-weight: 700;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+.sistema-label p {
+  font-size: 1.35em;
+  line-height: 1.4em;
+}
+
+.sistema-botao {
+  margin-bottom: 3em !important;
+  background-color: #9ce6df;
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(90deg, #517bee, #5cd6c9) 1;
+}
+
+.sistema-botao a {
+  padding: 20px 0;
+  width: 100%;
+  font-size: 1.15em;
+  color: #0a3299;
+}
+
+.sistema-label a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.sistema-label a:visited {
+  color: #517bee;
+}
