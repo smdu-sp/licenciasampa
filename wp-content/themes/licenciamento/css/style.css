@@ -13,33 +13,63 @@
  *  */
 @font-face {
   font-family: Roboto;
-  font-weight: 400;
+	font-weight: 400;
   src: url(/wp-content/themes/licenciamento/fonts/Roboto-Regular.ttf);
 }
 
 @font-face {
   font-family: Roboto;
-  font-weight: 700;
+	font-weight: 700;
   src: url(/wp-content/themes/licenciamento/fonts/Roboto-Bold.ttf);
 }
 
-h1, .sistema-label p, .sistema-botao {
-  margin-bottom: 1em;
-  font-family: Roboto;
-  font-weight: 700;
-  color: #fff;
+/* CSS para width 1920 */
+.secao {
+	min-height: 1080px;
 }
 
-h1 {
-  font-size: 2.4em;
+.secao.info {
+	min-height: 900px;
 }
 
-.sistema-label p {
-  font-size: 1.35em;
-  line-height: 1.4em;
+h1, .topo p {
+	margin-bottom: 1em;
+	font-family: Roboto;
+	font-weight: 700;
+	color: #fff;
 }
 
-.sistema-botao {
+h1, h2 {
+	font-size: 2.4em;
+}
+
+h2 {
+	margin-bottom: 1em;
+	font-family: Roboto;
+	font-weight: 700;
+	color: #0a3299;
+}
+
+.titulo-decorado h2::after, .titulo-decorado p::after {
+	margin-top: 0.4em;
+	display: block;
+	content: "";
+	width: 100%;
+	height: 15px;
+	background-color: currentColor;
+}
+
+.topo .topo p, p {
+	font-size: 1.35em;
+	line-height: 1.5em;
+}
+
+p {
+	font-family: Roboto;
+	font-weight: 400;
+}
+
+.topo div.botao {
   margin-bottom: 3em !important;
   background-color: #9ce6df;
   text-align: center;
@@ -48,18 +78,111 @@ h1 {
   border-image: linear-gradient(90deg, #517bee, #5cd6c9) 1;
 }
 
-.sistema-botao a {
-  padding: 20px 0;
+.topo a.botao {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
   width: 100%;
+	min-height: 3em;
+  padding: 0 0.5em;
+	font-family: Roboto;
+	font-weight: 700;
   font-size: 1.15em;
+  line-height: 1.2em !important;
   color: #0a3299;
 }
 
-.sistema-label a {
-  color: #fff;
-  text-decoration: underline;
+.topo .label a {
+	color: #fff;
+	text-decoration: underline;
 }
 
-.sistema-label a:visited {
-  color: #517bee;
+.topo .label a:visited {
+	color: #517bee;
+}
+
+.secao.info p {
+	padding: 1em 0;
+}
+
+.info .contato {
+	padding-top: 8em;
+	padding-right: 4em;
+}
+
+.servico div.botao {
+	margin-bottom: 2em;
+	border: solid 1px #0a3299;
+}
+
+.servico a.botao {
+	display: flex !important;
+	align-items: center;
+	width: 100%;
+	min-height: 3em;
+	padding: 0 1em;
+	font-family: Roboto;
+	font-weight: 400;
+	font-size: 1.15em;
+	line-height: 1.2em !important;
+	color: #000;
+}
+
+.servico div.botao:nth-child(2n+1) {
+	margin-right: 9em !important;
+}
+
+.servico div.botao:nth-child(n+1) {
+	border-left: solid 8px #0a3299
+}
+
+.servico div.botao:nth-child(n+3) {
+	border-left: solid 8px #11419d
+}
+
+.servico div.botao:nth-child(n+5) {
+	border-left: solid 8px #1850a1
+}
+
+
+.servico div.botao:nth-child(n+7) {
+	border-left: solid 8px #1f5fa5
+}
+
+.servico div.botao:nth-child(n+9) {
+	border-left: solid 8px #276ea9
+}
+
+.servico div.botao:nth-child(n+11) {
+	border-left: solid 8px #2e7dae
+}
+
+.servico div.botao:nth-child(2n+2) {
+	border-left: solid 8px #368cb2
+}
+
+.servico div.botao:nth-child(2n+4) {
+	border-left: solid 8px #3d9ab7
+}
+
+.servico div.botao:nth-child(2n+6) {
+	border-left: solid 8px #45a9bb
+}
+
+
+.servico div.botao:nth-child(2n+8) {
+	border-left: solid 8px #4cb7c0
+}
+
+.servico div.botao:nth-child(2n+10) {
+	border-left: solid 8px #54c6c4
+}
+
+.servico div.botao:nth-child(2n+12) {
+	border-left: solid 8px #5cd6c9
+}
+
+/* Rodapé */
+.organizations {
+	background: -moz-linear-gradient(top, #f5f5f5 0%, #517bee 450px);
 }
