@@ -47,7 +47,7 @@
             "css_show_on": "desktop tablet phone",
             "css_custom": "enabled",
             "custom_text": "This is just some placeholder text. Click to edit it.",
-            "image": "179",
+            "image_url": "/portal-licenciamento/wp-content/themes/licenciamento/assets/footer-logo-prodam.png",
             "link_type": "none",
             "custom_text_state": "disabled",
             "image_alt": "Logo PRODAM",

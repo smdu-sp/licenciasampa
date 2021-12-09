@@ -5,7 +5,7 @@
     "custom_class": "home secao topo",
     "show_on": "desktop tablet phone ",
     "section_instance_id": "e965c998d8c",
-    "custom_id": "",
+    "custom_id": "conteudo-principal",
     "section_divider_top_style": "",
     "section_divider_bottom_style": "",
     "type": "full",
@@ -1262,7 +1262,7 @@
           {
             "css_show_on": "desktop tablet phone",
             "css_custom": "disabled",
-            "content": "<p>Ainda não tem a SenhaWeb? Cadastre-se <a href=\\\"#\\\">aqui</a></p>",
+            "content": "<p>Ainda não tem a SenhaWeb? Cadastre-se <a href=\\\"https://senhaweb.prefeitura.sp.gov.br/CreateInfo.aspx\\\">aqui</a></p>",
             "css_main_bg_img_repeat": "repeat",
             "css_main_bg_img_attch": "scroll",
             "css_main_bg_img_pos": "top left",

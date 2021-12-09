@@ -40,6 +40,8 @@ if ( ! function_exists( 'lct_theme_setup' ) ) {
 function lct_load_scripts() {
 
 	wp_enqueue_style( 'lct-base-style', get_stylesheet_uri(), array(), '1.0' );
+	wp_enqueue_style( 'acessivel', get_template_directory_uri() . '/css/acessivel.css', false, '1.0', 'all');
+	wp_enqueue_style( 'default', get_template_directory_uri() . '/css/default.css', false, '1.0.2', 'all');
 	wp_enqueue_script( 'jquery' );
 
 } add_action( 'wp_enqueue_scripts', 'lct_load_scripts' );
@@ -65,4 +67,10 @@ function lct_title( $sep ) {
 	the_title();
 	echo ' ' . $sep . ' ';
 	bloginfo( 'name ' );
+}
+
+//Enqueue the Dashicons script
+add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
+function load_dashicons_front_end() {
+wp_enqueue_style( 'dashicons' );
 }

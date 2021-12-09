@@ -54,9 +54,9 @@ a:focus {
 /* Header */
 .header {
   width: 85%;
-  margin: 3em auto 0 auto;
-  border: 3px solid #fff;
-  border-radius: 1.2em;
+  margin: 3em auto 0 auto !important;
+  border: 3px solid #fff !important;
+  border-radius: 1.2em !important;
 }
 
 .header .dslc-modules-area {
@@ -84,12 +84,21 @@ a:focus {
   font-size: 2rem !important;
 }
 
-.sub-menu .menu-item a {
-  font-size: 1.3rem !important;
-}
-
 .sub-menu {
   left: calc(100vw * 272 / 1152 - 480px) !important;
+}
+
+.sub-menu .menu-item {
+  border: 2px solid #7c82a0;
+  border-top-width: 0;
+}
+
+.sub-menu .menu-item:first-child {
+  border-top-width: 2px;
+}
+
+.sub-menu .menu-item a {
+  font-size: 1.3rem !important;
 }
 
 .menu-nav ul li:hover > a,
@@ -130,53 +139,53 @@ a:focus {
 /* Width 1600~1920px */
 /* Backgrounds */
 .home.topo {
-  background-image: url(/portal-licenciamento/wp-content/uploads/2021/11/bg-home-topo-1.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/11/bg-home-topo-2.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/11/bg-home-info-1.png) !important;
+  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-topo-1.png),
+    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-topo-2.png),
+    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-info-1.png) !important;
   background-size: 50% 100%, calc(240 * 100vw / 1920), calc(180 * 100vw / 1920) !important;
   background-position: 0% 0%, 100% 25%, 100% 100% !important;
 }
 
 .home.info {
-  background-image: url(/portal-licenciamento/wp-content/uploads/2021/11/bg-home-info-1.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/11/bg-home-info-2.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/11/bg-home-info-3.png) !important;
+  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-info-1.png),
+    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-info-2.png),
+    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-info-3.png) !important;
   background-size: calc(180 * 100vw / 1920), calc(180 * 100vw / 1920),
     calc(660 * 100vw / 1920) !important;
   background-position: 100% 0, 0 50%, 100% 100% !important;
 }
 
 .home.servico {
-  background-image: url(/portal-licenciamento/wp-content/uploads/2021/11/bg-home-servicos-1.png);
+  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-servicos-1.png);
   background-size: calc(660 * 100vw / 1920) !important;
   background-position: 100% 0 !important;
 }
 
 .interna.topo {
-  background-image: url(/portal-licenciamento/wp-content/uploads/2021/11/interna-bg-topo-1.png) !important;
+  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-topo-1.png) !important;
   background-size: calc(320 * 100vw / 1920) !important;
   background-position: 100% 100% !important;
 }
 
 .interna.info-1 {
-  background-image: url(/portal-licenciamento/wp-content/uploads/2021/11/interna-bg-info-1.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/11/interna-bg-info-2.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/11/interna-bg-info-3.png) !important;
+  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-1.png),
+    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-2.png),
+    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-3.png) !important;
   background-size: calc(320 * 100vw / 1920), calc(240 * 100vw / 1920),
     calc(460 * 100vw / 1920) !important;
   background-position: 100% 0%, 0% 50%, 100% 100% !important;
 }
 
 .interna.info-2 {
-  background-image: url(/portal-licenciamento/wp-content/uploads/2021/11/interna-bg-info-4.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/11/interna-bg-info-5.png) !important;
+  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-4.png),
+    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-5.png) !important;
   background-size: calc(460 * 100vw / 1920), calc(240 * 100vw / 1920) !important;
   background-position: 100% 0%, 100% 98% !important;
 }
 
 .interna.info-3 {
-  background-image: url(/portal-licenciamento/wp-content/uploads/2021/11/interna-bg-info-1.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/11/interna-bg-info-2.png),
+  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-1.png),
+    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-2.png),
     url(/portal-licenciamento/wp-content/uploads/2021/12/interna-bg-info-6.png) !important;
   background-size: calc(320 * 100vw / 1920), calc(240 * 100vw / 1920),
     calc(460 * 100vw / 1920) !important;
@@ -476,13 +485,29 @@ p {
 
 /* Rodapé */
 .organizations {
-  background: -webkit-linear-gradient(top, #eaeef9 0%, #517bee 360px);
-  background: -moz-linear-gradient(top, #eaeef9 0%, #517bee 360px);
-  background: linear-gradient(top, #eaeef9 0%, #517bee 360px);
+  background: -webkit-linear-gradient(
+    top,
+    #eaeef9 0%,
+    #517bee 360px
+  ) !important;
+  background: -moz-linear-gradient(top, #eaeef9 0%, #517bee 360px) !important;
+  background: linear-gradient(top, #eaeef9 0%, #517bee 360px) !important;
 }
 
 .organizations .email {
   font-size: 1.4em !important;
+}
+
+.footer {
+  max-height: 50px !important;
+}
+
+.footer .dslc-modules-area {
+  margin-bottom: 0;
+}
+
+.footer img {
+  height: 40px;
 }
 
 /* Responsivo 1024~1600px */
@@ -572,7 +597,7 @@ p {
 
 @media (max-width: 767px) {
   .header {
-    border: unset;
+    border: unset !important;
     width: 100% !important;
   }
 
@@ -656,6 +681,16 @@ p {
 
   .interna.topo .dslc-modules-area {
     min-height: 40em !important;
+  }
+
+  .organizations {
+    background: -webkit-linear-gradient(
+      top,
+      #eaeef9 0%,
+      #517bee 900px
+    ) !important;
+    background: -moz-linear-gradient(top, #eaeef9 0%, #517bee 900px) !important;
+    background: linear-gradient(top, #eaeef9 0%, #517bee 900px) !important;
   }
 }
 
