@@ -29,3 +29,6 @@ node_modules/
 *.bkp
 *_bkp
 *teste.php
+
+# ignora os assets
+wp-content/themes/licenciamento/assets
