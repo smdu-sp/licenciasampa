@@ -1,0 +1,55 @@
+.ajuda h2.page-title {
+    color:#0a3299 !important;
+}
+
+/* Índices */
+.info.interna.ajuda ul li {
+    padding: 0;
+    list-style: none;
+}
+
+.info.interna.ajuda nav ul li {
+    margin-bottom: 0;
+    line-height: 1em;
+}
+
+.info.interna.ajuda nav ul li::before {
+    content: "– ";
+}
+
+/* Botões SLCe - Mais informações */
+.btn-vtl li div.botao {
+    margin-bottom: 0 !important;
+}
+
+.btn-vtl li:last-child {
+    margin-bottom: 2em !important;
+}
+
+/* Ícone do botão "voltar" */
+.ajuda a.botao span:nth-child(2) {
+    padding-left: 0.5em;
+}
+
+.ajuda .dashicons {
+    width: auto;
+    height: auto;
+    font-size: 28px;
+}
+
+/* Accordion */
+.dslc-accordion span.dslc-accordion-title {
+    color: #0a3299 !important;
+}
+
+.dslca-icon {
+    color: #517bee !important;
+}
+
+
+
+@media (max-width: 1599px) {
+    .ajuda .dashicons {
+        font-size: 20px;
+    }
+}

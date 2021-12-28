@@ -29,6 +29,10 @@
   src: url(/portal-licenciamento/wp-content/themes/licenciamento/fonts/Roboto-Black.ttf);
 }
 
+body {
+  background-color: #eaeef9;
+}
+
 body * {
   font-family: Roboto;
 }
@@ -139,57 +143,82 @@ a:focus {
 /* Width 1600~1920px */
 /* Backgrounds */
 .home.topo {
-  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-topo-1.png),
-    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-topo-2.png),
-    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-info-1.png) !important;
+  background-image: url(/portal-licenciamento/assets/home-bg-topo-1.png),
+    url(/portal-licenciamento/assets/home-bg-topo-2.png),
+    url(/portal-licenciamento/assets/home-bg-info-1.png) !important;
   background-size: 50% 100%, calc(240 * 100vw / 1920), calc(180 * 100vw / 1920) !important;
   background-position: 0% 0%, 100% 25%, 100% 100% !important;
 }
 
 .home.info {
-  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-info-1.png),
-    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-info-2.png),
-    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-info-3.png) !important;
+  background-image: url(/portal-licenciamento/assets/home-bg-info-1.png),
+    url(/portal-licenciamento/assets/home-bg-info-2.png),
+    url(/portal-licenciamento/assets/home-bg-info-3.png) !important;
   background-size: calc(180 * 100vw / 1920), calc(180 * 100vw / 1920),
     calc(660 * 100vw / 1920) !important;
   background-position: 100% 0, 0 50%, 100% 100% !important;
 }
 
 .home.servico {
-  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/home-bg-servicos-1.png);
+  background-image: url(/portal-licenciamento/assets/home-bg-servicos-1.png);
   background-size: calc(660 * 100vw / 1920) !important;
   background-position: 100% 0 !important;
 }
 
 .interna.topo {
-  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-topo-1.png) !important;
+  background-image: url(/portal-licenciamento/assets/interna-bg-topo-1.png) !important;
   background-size: calc(320 * 100vw / 1920) !important;
   background-position: 100% 100% !important;
 }
 
 .interna.info-1 {
-  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-1.png),
-    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-2.png),
-    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-3.png) !important;
+  background-image: url(/portal-licenciamento/assets/interna-bg-info-1.png),
+    url(/portal-licenciamento/assets/interna-bg-info-2.png),
+    url(/portal-licenciamento/assets/interna-bg-info-3.png) !important;
   background-size: calc(320 * 100vw / 1920), calc(240 * 100vw / 1920),
     calc(460 * 100vw / 1920) !important;
   background-position: 100% 0%, 0% 50%, 100% 100% !important;
 }
 
 .interna.info-2 {
-  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-4.png),
-    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-5.png) !important;
+  background-image: url(/portal-licenciamento/assets/interna-bg-info-4.png),
+    url(/portal-licenciamento/assets/interna-bg-info-5.png) !important;
   background-size: calc(460 * 100vw / 1920), calc(240 * 100vw / 1920) !important;
   background-position: 100% 0%, 100% 98% !important;
 }
 
 .interna.info-3 {
-  background-image: url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-1.png),
-    url(/portal-licenciamento/wp-content/themes/licenciamento/assets/interna-bg-info-2.png),
-    url(/portal-licenciamento/wp-content/uploads/2021/12/interna-bg-info-6.png) !important;
+  background-image: url(/portal-licenciamento/assets/interna-bg-info-1.png),
+    url(/portal-licenciamento/assets/interna-bg-info-2.png),
+    url(/portal-licenciamento/assets/interna-bg-info-6.png) !important;
   background-size: calc(320 * 100vw / 1920), calc(240 * 100vw / 1920),
     calc(460 * 100vw / 1920) !important;
   background-position: 100% 0%, 0% 50%, 100% 100% !important;
+}
+
+.interna.info-4 {
+  background-image: url(/portal-licenciamento/assets/interna-bg-info-1.png),
+    url(/portal-licenciamento/assets/interna-bg-info-2.png) !important;
+  background-size: calc(320 * 100vw / 1920), calc(240 * 100vw / 1920) !important;
+  background-position: 100% 0%, 0% 90% !important;
+}
+
+.interna.info-5 {
+  background-image: url(/portal-licenciamento/assets/interna-bg-info-3.png) !important;
+  background-size: calc(460 * 100vw / 1920) !important;
+  background-position: 100% 100% !important;
+}
+
+.interna.info-6 {
+  background-image: url(/portal-licenciamento/assets/interna-bg-info-4.png) !important;
+  background-size: calc(460 * 100vw / 1920) !important;
+  background-position: 100% 0% !important;
+}
+
+.interna.info-7 {
+  background-image: url(/portal-licenciamento/assets/interna-bg-info-5.png) !important;
+  background-size: calc(240 * 100vw / 1920) !important;
+  background-position: 100% 50% !important;
 }
 
 .interna.info-3 {
@@ -223,6 +252,21 @@ a:focus {
 
   .interna.info-3 {
     background-size: 320px, 240px, 460px !important;
+  }
+  .interna.info-4 {
+    background-size: 320px, 240px !important;
+  }
+
+  .interna.info-5 {
+    background-size: 460px !important;
+  }
+
+  .interna.info-6 {
+    background-size: 460px !important;
+  }
+
+  .interna.info-7 {
+    background-size: 240px !important;
   }
 }
 
@@ -300,14 +344,30 @@ h2 {
 }
 
 .topo p,
-p {
+p,
+.info.interna ul li {
   font-size: 1.35em;
   line-height: 1.5em;
 }
 
-p {
+p,
+.info.interna ul li {
   font-family: Roboto;
   font-weight: 400;
+}
+
+.info.interna ul li {
+  list-style: disc inside;
+}
+
+.info.interna ol.alpha li {
+  list-style: none;
+  counter-increment: item;
+}
+
+.info.interna ol.alpha li:before {
+  content: counter(item, lower-alpha) ") ";
+  font-weight: 700;
 }
 
 .topo div.botao {
@@ -342,7 +402,8 @@ p {
   color: #517bee;
 }
 
-.info p {
+.info p,
+.info.interna ul li {
   padding: 1em 0;
 }
 
@@ -357,7 +418,7 @@ p {
 }
 
 .legenda {
-  padding: 4em 0 1.5em 0;
+  padding: 2em 0 0.5em 0;
   color: #0a3299;
 }
 
@@ -470,6 +531,19 @@ p {
 .interna.topo h1 {
   padding-top: 0;
 }
+
+@media (min-width: 767px) AND (max-width: 1599px) {
+  .interna.topo .dslc-modules-section-wrapper,
+  .info .dslc-modules-section-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .topo.dslc-modules-section-dnd .dslc-modules-section-wrapper {
+    display: unset;
+  }
+}
+
 /* Página Inexistente */
 .nao-encontrada {
   display: flex;
@@ -508,6 +582,9 @@ p {
 
 .footer img {
   height: 40px;
+  /* Cor do logo: #535350 */
+  filter: brightness(0) saturate(100%) invert(29%) sepia(8%) saturate(172%)
+    hue-rotate(22deg) brightness(98%) contrast(84%);
 }
 
 /* Responsivo 1024~1600px */
