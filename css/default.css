@@ -586,7 +586,7 @@ p,
 }
 
 .footer img {
-  height: 40px;
+  height: 30px;
   /* Cor do logo: #535350 */
   filter: brightness(0) saturate(100%) invert(29%) sepia(8%) saturate(172%)
     hue-rotate(22deg) brightness(98%) contrast(84%);
