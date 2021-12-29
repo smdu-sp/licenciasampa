@@ -14,19 +14,19 @@
 @font-face {
   font-family: Roboto;
   font-weight: 400;
-  src: url(/portal-licenciamento/wp-content/themes/licenciamento/fonts/Roboto-Regular.ttf);
+  src: url(/portal-licenciamento/fonts/Roboto-Regular.ttf);
 }
 
 @font-face {
   font-family: Roboto;
   font-weight: 700;
-  src: url(/portal-licenciamento/wp-content/themes/licenciamento/fonts/Roboto-Bold.ttf);
+  src: url(/portal-licenciamento/fonts/Roboto-Bold.ttf);
 }
 
 @font-face {
   font-family: Roboto;
   font-weight: 900;
-  src: url(/portal-licenciamento/wp-content/themes/licenciamento/fonts/Roboto-Black.ttf);
+  src: url(/portal-licenciamento/fonts/Roboto-Black.ttf);
 }
 
 body {
@@ -81,6 +81,7 @@ a:focus {
 .menu-nav ul li {
   margin-left: 0 !important;
   max-height: 80px !important;
+  cursor: pointer;
 }
 
 .menu-nav ul li a {
@@ -545,6 +546,8 @@ p,
   .interna.topo .dslc-modules-section-wrapper,
   .info .dslc-modules-section-wrapper {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
