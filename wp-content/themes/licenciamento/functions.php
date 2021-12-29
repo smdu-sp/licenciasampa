@@ -41,7 +41,7 @@ function lct_load_scripts() {
 
 	wp_enqueue_style( 'lct-base-style', get_stylesheet_uri(), array(), '1.0' );
 	wp_enqueue_style( 'acessivel', '/css/acessivel.css', false, '1.0', 'all');
-	wp_enqueue_style( 'default', '/css/default.css', false, '1.3.1', 'all');
+	wp_enqueue_style( 'default', '/css/default.css', false, '1.3.2', 'all');
 	wp_enqueue_style( 'paginas_ajuda', '/css/ajuda.css', false, '1.1', 'all');
 	wp_enqueue_script( 'jquery' );
 
