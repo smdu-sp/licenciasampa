@@ -407,8 +407,8 @@ p,
   text-decoration: underline;
 }
 
-.topo .label a:visited {
-  color: #517bee;
+.topo .label a:hover {
+  color: #5cd6c9;
 }
 
 .info p,
