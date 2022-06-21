@@ -1,6 +1,6 @@
-# AprovaSP
+## AprovaSP
 
-## Configuração de ambiente em servidor Ubuntu 22.04
+### Configuração de ambiente em servidor Ubuntu 22.04
 
 Requisitos:
 
@@ -9,7 +9,7 @@ Requisitos:
 - PHP 8.1
 - WordPress 6 com plugin Live Composer
 
-### Instalação em VM rede interna
+#### Instalação em VM rede interna
 
 É necessário configurar o proxy caso o servidor esteja rodando na rede interna:
 
@@ -27,7 +27,7 @@ Acquire::https::proxy "https://usuario:senha@ipproxy:porta/";
 
 Caso mesmo assim algum dos comandos apresentar timeout, utilizar a opção -E para forçar a utilização das variáveis de ambiente.
 
-### Instalação do Apache
+#### Instalação do Apache
 
 ```shell
 sudo apt-get install apache2
@@ -51,7 +51,7 @@ sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```
 
-### Instalação do MySQL 8
+#### Instalação do MySQL 8
 
 ```shell
 sudo apt-get install mysql-server
@@ -76,7 +76,7 @@ sudo mysql_secure_installation
 sudo vim /etc/mysql/mysql.conf.d/mysql.cnf
 ```
 
-### Instalação do PHP 8.1
+#### Instalação do PHP 8.1
 
 ```
 # Instalar os pacotes
@@ -90,7 +90,7 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt-get upgrade
 ```
 
-### Instalação do WordPress:
+#### Instalação do WordPress:
 
 - Baixar a versão mais recente em https://br.wordpress.org/download/ e extrair em `/var/www/aprovasp`.
 - Instalar os tema do site em `./wp-content/themes/` e o CSS em `./css`.
