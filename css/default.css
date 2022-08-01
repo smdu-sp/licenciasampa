@@ -14,19 +14,19 @@
 @font-face {
   font-family: Roboto;
   font-weight: 400;
-  src: url(/portal-licenciamento/fonts/Roboto-Regular.ttf);
+  src: url(/fonts/Roboto-Regular.ttf);
 }
 
 @font-face {
   font-family: Roboto;
   font-weight: 700;
-  src: url(/portal-licenciamento/fonts/Roboto-Bold.ttf);
+  src: url(/fonts/Roboto-Bold.ttf);
 }
 
 @font-face {
   font-family: Roboto;
   font-weight: 900;
-  src: url(/portal-licenciamento/fonts/Roboto-Black.ttf);
+  src: url(/fonts/Roboto-Black.ttf);
 }
 
 body {
@@ -145,81 +145,81 @@ a:focus {
 /* Backgrounds */
 .home.topo {
   background-image: linear-gradient(180deg, rgba(81, 123, 238, 0) 0%, rgba(70, 112, 225, 0.10) 15%, rgba(37, 78, 186, 0.5) 67%, rgba(17, 58, 162, 0.90) 100%),
-    url(/portal-licenciamento/assets/home-bg-topo-1.png),
-    url(/portal-licenciamento/assets/home-bg-topo-2.png),
-    url(/portal-licenciamento/assets/home-bg-info-1.png),
+    url(/assets/home-bg-topo-1.png),
+    url(/assets/home-bg-topo-2.png),
+    url(/assets/home-bg-info-1.png),
     linear-gradient(175deg, rgba(10, 50, 153, 0) 0%, rgba(12, 52, 155, 0.4) 40%, rgba(18, 58, 163, 0.6) 60%, rgba(29, 69, 175, 0.7) 70%, rgba(44, 85, 193, 0.8) 80%, rgba(63, 105, 217, 0.9) 90%, rgba(81, 123, 238, 1) 100%) !important;
   background-size: 50% 50%, 50% 100%, calc(240 * 100vw / 1920), calc(180 * 100vw / 1920), 100% 50% !important;
   background-position: 0% 100%, 0% 0%, 100% 25%, 100% 100%, 0% 100% !important;
 }
 
 .home.info {
-  background-image: url(/portal-licenciamento/assets/home-bg-info-1.png),
-    url(/portal-licenciamento/assets/home-bg-info-2.png),
-    url(/portal-licenciamento/assets/home-bg-info-3.png) !important;
+  background-image: url(/assets/home-bg-info-1.png),
+    url(/assets/home-bg-info-2.png),
+    url(/assets/home-bg-info-3.png) !important;
   background-size: calc(180 * 100vw / 1920), calc(180 * 100vw / 1920),
     calc(660 * 100vw / 1920) !important;
   background-position: 100% 0, 0 50%, 100% 100% !important;
 }
 
 .home.servico {
-  background-image: url(/portal-licenciamento/assets/home-bg-servicos-1.png);
+  background-image: url(/assets/home-bg-servicos-1.png);
   background-size: calc(660 * 100vw / 1920) !important;
   background-position: 100% 0 !important;
 }
 
 .interna.topo {
-  background-image: url(/portal-licenciamento/assets/interna-bg-topo-1.png) !important;
+  background-image: url(/assets/interna-bg-topo-1.png) !important;
   background-size: calc(320 * 100vw / 1920) !important;
   background-position: 100% 100% !important;
 }
 
 .interna.info-1 {
-  background-image: url(/portal-licenciamento/assets/interna-bg-info-1.png),
-    url(/portal-licenciamento/assets/interna-bg-info-2.png),
-    url(/portal-licenciamento/assets/interna-bg-info-3.png) !important;
+  background-image: url(/assets/interna-bg-info-1.png),
+    url(/assets/interna-bg-info-2.png),
+    url(/assets/interna-bg-info-3.png) !important;
   background-size: calc(320 * 100vw / 1920), calc(240 * 100vw / 1920),
     calc(460 * 100vw / 1920) !important;
   background-position: 100% 0%, 0% 50%, 100% 100% !important;
 }
 
 .interna.info-2 {
-  background-image: url(/portal-licenciamento/assets/interna-bg-info-4.png),
-    url(/portal-licenciamento/assets/interna-bg-info-5.png) !important;
+  background-image: url(/assets/interna-bg-info-4.png),
+    url(/assets/interna-bg-info-5.png) !important;
   background-size: calc(460 * 100vw / 1920), calc(240 * 100vw / 1920) !important;
   background-position: 100% 0%, 100% 98% !important;
 }
 
 .interna.info-3 {
-  background-image: url(/portal-licenciamento/assets/interna-bg-info-1.png),
-    url(/portal-licenciamento/assets/interna-bg-info-2.png),
-    url(/portal-licenciamento/assets/interna-bg-info-6.png) !important;
+  background-image: url(/assets/interna-bg-info-1.png),
+    url(/assets/interna-bg-info-2.png),
+    url(/assets/interna-bg-info-6.png) !important;
   background-size: calc(320 * 100vw / 1920), calc(240 * 100vw / 1920),
     calc(460 * 100vw / 1920) !important;
   background-position: 100% 0%, 0% 50%, 100% 100% !important;
 }
 
 .interna.info-4 {
-  background-image: url(/portal-licenciamento/assets/interna-bg-info-1.png),
-    url(/portal-licenciamento/assets/interna-bg-info-2.png) !important;
+  background-image: url(/assets/interna-bg-info-1.png),
+    url(/assets/interna-bg-info-2.png) !important;
   background-size: calc(320 * 100vw / 1920), calc(240 * 100vw / 1920) !important;
   background-position: 100% 0%, 0% 90% !important;
 }
 
 .interna.info-5 {
-  background-image: url(/portal-licenciamento/assets/interna-bg-info-3.png) !important;
+  background-image: url(/assets/interna-bg-info-3.png) !important;
   background-size: calc(460 * 100vw / 1920) !important;
   background-position: 100% 100% !important;
 }
 
 .interna.info-6 {
-  background-image: url(/portal-licenciamento/assets/interna-bg-info-4.png) !important;
+  background-image: url(/assets/interna-bg-info-4.png) !important;
   background-size: calc(460 * 100vw / 1920) !important;
   background-position: 100% 0% !important;
 }
 
 .interna.info-7 {
-  background-image: url(/portal-licenciamento/assets/interna-bg-info-5.png) !important;
+  background-image: url(/assets/interna-bg-info-5.png) !important;
   background-size: calc(240 * 100vw / 1920) !important;
   background-position: 100% 50% !important;
 }
