@@ -1,0 +1,11 @@
+.fbc-items {
+    margin-left: 0 !important;
+}
+
+.fbc-items li:first-child {
+    padding-left: 0 !important;
+}
+
+.fbc-items li:last-child span {
+    font-weight: 700;
+}

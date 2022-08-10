@@ -1,0 +1,240 @@
+/* Botões do topo da Home */
+.topo div.botao {
+  margin-bottom: 3em !important;
+  background-color: #9ce6df;
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(90deg, #517bee, #5cd6c9) 1;
+}
+
+.topo a.botao {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3em;
+  padding: 0 0.5em;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 1.15em;
+  line-height: 1.2em !important;
+  color: #0a3299;
+}
+
+/* Botões da seção de documentos */
+.servico div.botao, 
+.documento div.botao {
+  margin-bottom: 2em;
+  border: solid 1px #0a3299;
+}
+
+.servico a.botao,
+.documento a.botao {
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+  min-height: 3em;
+  padding: 0 1em;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 1.15em;
+  line-height: 1.2em !important;
+  color: #000;
+}
+
+.servico div.botao:nth-child(2n + 1),
+.documento div.botao:nth-child(2n + 1) {
+  margin-right: 9em !important;
+}
+
+.servico div.botao:nth-child(n + 1),
+.documento div.botao:nth-child(n + 1) {
+  border-left: solid 8px #0a3299;
+}
+
+.servico div.botao:nth-child(n + 3),
+.documento div.botao:nth-child(n + 3) {
+  border-left: solid 8px #11419d;
+}
+
+.servico div.botao:nth-child(n + 5),
+.documento div.botao:nth-child(n + 5) {
+  border-left: solid 8px #1850a1;
+}
+
+.servico div.botao:nth-child(n + 7),
+.documento div.botao:nth-child(n + 7) {
+  border-left: solid 8px #1f5fa5;
+}
+
+.servico div.botao:nth-child(n + 9),
+.documento div.botao:nth-child(n + 9) {
+  border-left: solid 8px #276ea9;
+}
+
+.servico div.botao:nth-child(n + 11),
+.documento div.botao:nth-child(n + 11) {
+  border-left: solid 8px #2e7dae;
+}
+
+.servico div.botao:nth-child(2n + 2),
+.documento div.botao:nth-child(2n + 2) {
+  border-left: solid 8px #368cb2;
+}
+
+.servico div.botao:nth-child(2n + 4),
+.documento div.botao:nth-child(2n + 4) {
+  border-left: solid 8px #3d9ab7;
+}
+
+.servico div.botao:nth-child(2n + 6),
+.documento div.botao:nth-child(2n + 6) {
+  border-left: solid 8px #45a9bb;
+}
+
+.servico div.botao:nth-child(2n + 8),
+.documento div.botao:nth-child(2n + 8) {
+  border-left: solid 8px #4cb7c0;
+}
+
+.servico div.botao:nth-child(2n + 10),
+.documento div.botao:nth-child(2n + 10) {
+  border-left: solid 8px #54c6c4;
+}
+
+.servico div.botao:nth-child(2n + 12),
+.documento div.botao:nth-child(2n + 12) {
+  border-left: solid 8px #5cd6c9;
+}
+
+/* Botões das páginas informativas */
+.info div.botao {
+  margin-bottom: 3em !important;
+  background-color: #9ce6df;
+  text-align: center;
+  border: double 1px transparent;
+  border-radius: 0.5em;
+  background-image: linear-gradient(#9ce6df 0%, #80d0c0 95%),
+    linear-gradient(90deg, #517bee, #5cd6c9);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.info a.botao {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3em;
+  padding: 0 0.5em;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 1.35em;
+  line-height: 1.2em !important;
+  color: #0a3299;
+}
+
+/* Responsivo */
+@media (max-width: 767px) {
+  .home.topo .dslc-modules-area:nth-child(2) div.botao {
+    width: 320px;
+  }
+
+  .topo div.botao,
+  .servico div.botao,
+  .documento div.botao,
+  .info div.botao {
+    max-width: 320px;
+    font-size: 1.4em;
+  }
+
+  .servico div.botao:nth-child(n + 2),
+  .documento div.botao:nth-child(n + 2) {
+    border-left: solid 8px #11419d;
+  }
+
+  .servico div.botao:nth-child(n + 3),
+  .documento div.botao:nth-child(n + 3) {
+    border-left: solid 8px #1850a1;
+  }
+
+  .servico div.botao:nth-child(n + 4),
+  .documento div.botao:nth-child(n + 4) {
+    border-left: solid 8px #1f5fa5;
+  }
+
+  .servico div.botao:nth-child(n + 5),
+  .documento div.botao:nth-child(n + 5) {
+    border-left: solid 8px #276ea9;
+  }
+
+  .servico div.botao:nth-child(n + 6),
+  .documento div.botao:nth-child(n + 6) {
+    border-left: solid 8px #2e7dae;
+  }
+
+  .servico div.botao:nth-child(n + 7),
+  .documento div.botao:nth-child(n + 7) {
+    border-left: solid 8px #368cb2;
+  }
+
+  .servico div.botao:nth-child(n + 8),
+  .documento div.botao:nth-child(n + 8) {
+    border-left: solid 8px #3d9ab7;
+  }
+
+  .servico div.botao:nth-child(n + 9),
+  .documento div.botao:nth-child(n + 9) {
+    border-left: solid 8px #45a9bb;
+  }
+
+  .servico div.botao:nth-child(n + 10),
+  .documento div.botao:nth-child(n + 10) {
+    border-left: solid 8px #4cb7c0;
+  }
+
+  .servico div.botao:nth-child(n + 11),
+  .documento div.botao:nth-child(n + 11) {
+    border-left: solid 8px #54c6c4;
+  }
+
+  .servico div.botao:nth-child(n + 12),
+  .documento div.botao:nth-child(n + 12) {
+    border-left: solid 8px #5cd6c9;
+  }
+}
+
+/* Botões da página "Outras Secretarias" */
+.info.secretarias div.botao {
+  margin-bottom: 3em !important;
+  background-color: #9ce6df;
+  text-align: center;
+  border: double 1px transparent;
+  border-radius: 0.5em;
+  background-image: linear-gradient(#9ce6df 0%, #80d0c0 95%),
+    linear-gradient(90deg, #517bee, #5cd6c9);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.info.secretarias a.botao {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3em;
+  padding: 1em 0.5em;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 1.35em;
+  line-height: 1.2em !important;
+  color: #0a3299;
+}
+
+@media (max-width: 767px) {
+  .info.secretarias div.botao {
+    max-width: 320px;
+    font-size: 1.4em;
+  }
+}
