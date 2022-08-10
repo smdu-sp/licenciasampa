@@ -2,9 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @link https://livecomposerplugin.com/themes/
- *
- * @package LC Blank
+ * @package AprovaSP
  */
 
 get_header(); ?>

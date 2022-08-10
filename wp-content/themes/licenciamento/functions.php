@@ -2,9 +2,7 @@
 /**
  * Functions and definitions.
  *
- * @link https://livecomposerplugin.com/themes/
- *
- * @package LC Blank
+ * @package AprovaSP
  */
 
 // Delcare Header/Footer compatibility.

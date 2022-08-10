@@ -1,13 +1,15 @@
 /*
-	Theme Name: LC Blank
-	Theme URI: http://themeforest.net/user/DanyDuchaine
-	Author: Slobodan Kustrimovic
-	Author URI: http://themeforest.net/user/DanyDuchaine
-	Description: Multipurpose theme powered by Live Composer.
-	Version: 1.0.2
-	License: GPL2
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Theme Name: AprovaSP
+  Author: Vinicius Giuliani
+  Description: Tema do Aprova SP. Design por SMUL/ASCOM. Construido com base no tema LC Blank: https://livecomposerplugin.com/downloads/blank-theme/
+  Version: 1.0.0
+  Requires at least: 6.0
+  Tested up to: 6.0
+  Requires PHP: 8.1
+  License: GPL2
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
 
 /**
  * Reset CSS

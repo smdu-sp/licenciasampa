@@ -2,9 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @link https://livecomposerplugin.com/themes/
- *
- * @package LC Blank
+ * @package AprovaSP
  */
 
 get_header();

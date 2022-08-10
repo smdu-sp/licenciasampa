@@ -2,9 +2,7 @@
 /**
  * This is the template that displays all of the <head> section.
  *
- * @link https://livecomposerplugin.com/themes/
- *
- * @package LC Blank
+ * @package AprovaSP
  */
 
 ?>

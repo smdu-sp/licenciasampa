@@ -2,9 +2,7 @@
 /**
  * The template for displaying the footer.
  *
- * @link https://livecomposerplugin.com/themes/
- *
- * @package LC Blank
+ * @package AprovaSP
  */
 
 ?>
