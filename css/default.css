@@ -67,23 +67,23 @@ a:focus {
   background-position: 0% 100%, 0% 0%, 100% 25%, 100% 100%, 0% 100% !important;
 }
 
-.home.info {
+.home.info,
+.home.avisos {
   background-image: url(/assets/home-bg-info-1.png),
-    url(/assets/home-bg-info-2.png),
-    url(/assets/home-bg-info-3.png) !important;
+    url(/assets/home-bg-info-2.png);
   background-size: calc(180 * 100vw / 1920), calc(180 * 100vw / 1920),
     calc(660 * 100vw / 1920) !important;
   background-position: 100% 0, 0 50%, 100% 100% !important;
 }
 
 .home.servico,
-.home.documento {
+.secao.documento {
   background-image: url(/assets/home-bg-servicos-1.png);
   background-size: calc(660 * 100vw / 1920) !important;
   background-position: 100% 0 !important;
 }
 
-.home.documento {
+.secao.documento {
   background-image: url(/assets/home-bg-documentos.png);
   min-height: 1100px;
 }
@@ -153,11 +153,12 @@ a:focus {
     background-size: 50% 50%, 50% 100%, 240px, 180px, 100% 50% !important;
   }
 
-  .home.info {
-    background-size: 180px, 180px, 660px !important;
+  .home.info,
+  .home.avisos {
+    background-size: 180px, 180px !important;
   }
 
-  .home.servico, .home.documento {
+  .home.servico, .secao.documento {
     background-size: 660px !important;
   }
 
@@ -215,7 +216,8 @@ a:focus {
   background-size: calc(min(100%, 1920px)) calc(max(100%, 1080px));
 }
 
-.secao.info {
+.secao.info,
+.secao.avisos {
   min-height: 900px;
   background-size: calc(min(100%, 1920px)) calc(max(100%, 900px));
 }
@@ -316,16 +318,19 @@ p,
 }
 
 .info p,
+.avisos p,
 .info.interna ul li {
   padding: 1em 0;
 }
 
-.info h2 {
+.info h2,
+.avisos h2 {
   margin-bottom: 0;
   padding: 2em 0 0.5em;
 }
 
-.info .contato {
+.info .contato,
+.avisos .contato {
   padding-top: 8em;
   padding-right: 4em;
 }
@@ -352,7 +357,8 @@ p,
 
 @media (min-width: 767px) AND (max-width: 1599px) {
   .interna.topo .dslc-modules-section-wrapper,
-  .info .dslc-modules-section-wrapper {
+  .info .dslc-modules-section-wrapper
+  .avisos .dslc-modules-section-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -417,7 +423,8 @@ p,
     font-size: 1.2em;
   }
 
-  .home.secao.info {
+  .home.secao.info,
+  .home.secao.avisos {
     padding-left: 12.5%;
     padding-right: 12.5%;
   }
@@ -439,8 +446,9 @@ p,
 
   .home.topo,
   .home.info,
+  .home.avisos,
   .home.servico,
-  .home.documento,
+  .secao.documento,
   .interna.topo,
   .interna.info {
     background-image: none !important;
@@ -466,13 +474,15 @@ p,
   .secao.topo,
   .secao.topo .dslc-modules-area,
   .secao.info,
+  .secao.avisos,
   .secao.servico,
   .secao.documento {
     height: auto !important;
     min-height: unset;
   }
 
-  .secao.info {
+  .secao.info,
+  .secao.avisos {
     padding-top: 5em !important;
     padding-bottom: 5em !important;
   }

@@ -97,18 +97,8 @@
     width: max(100%, 1024px) !important;
   }
 
-  .header .menu-nav {
-    left: 25%;
-  }
-
   .menu ul li a {
     font-size: 1.6rem !important;
-  }
-}
-
-@media (min-width: 1024px) AND (max-width: 1299px) {
-  .header .menu-nav {
-    left: 20%;
   }
 }
 
