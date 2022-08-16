@@ -73,14 +73,22 @@
 }
 
 .header .dslc-modules-area {
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
-.logo-site {
+.container-logos {
+  margin-right: auto;
+}
+
+.logo-site, .botao-voltar {
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.botao-voltar {
+  width: auto;
 }
 
 .menu-nav ul li a {

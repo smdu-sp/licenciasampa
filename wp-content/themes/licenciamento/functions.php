@@ -42,12 +42,12 @@ function lct_load_scripts() {
 	wp_enqueue_style( 'lct-base-style', get_stylesheet_uri(), array(), '1.0' );
 	wp_enqueue_style( 'acessivel', '/css/acessivel.css', false, '1.0', 'all');
 	wp_enqueue_style( 'default', '/css/default.css', false, '1.6', 'all');
-	wp_enqueue_style( 'menus', '/css/menus.css', false, '1.1', 'all');
+	wp_enqueue_style( 'menus', '/css/menus.css', false, '1.1.0', 'all');
 	wp_enqueue_style( 'botoes', '/css/botoes.css', false, '1.0.2', 'all');
 	wp_enqueue_style( 'paginas_ajuda', '/css/ajuda.css', false, '1.1', 'all');
 	wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
 	wp_enqueue_script( 'jquery' );
-	
+
 } add_action( 'wp_enqueue_scripts', 'lct_load_scripts' );
 
 if ( ! defined( 'DS_LIVE_COMPOSER_VER' ) ) {
@@ -78,3 +78,15 @@ add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
 function load_dashicons_front_end() {
 wp_enqueue_style( 'dashicons' );
 }
+
+// Shortcodes
+// Adiciona o botão "Voltar" em todas as páginas, exceto na página principal
+add_shortcode('shortcodeBotaoVoltar', 'shortcodeBotaoVoltar');
+
+function shortcodeBotaoVoltar() {
+	
+require_once "modulo-botao-voltar.php";
+
+return ob_get_clean();
+}
+
