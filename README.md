@@ -90,9 +90,17 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt-get upgrade
 ```
 
-#### Instalação do WordPress:
+#### WordPress
 
-- Baixar a versão mais recente em https://br.wordpress.org/download/ e extrair em `/var/www/aprovasp`.
+Plugins necessários:
+
+- Live Composer
+- Flexy Breadcrumb
+
+Instalação:
+
+- Baixar a versão mais recente do WordPress em https://br.wordpress.org/download/ e extrair em `/var/www/aprovasp`.
 - Instalar os tema do site em `./wp-content/themes/` e o CSS em `./css`.
 - Adicionar as configurações do banco de dados em `./wp-config.php`.
-- Instalar o plugin Live Composer, criar as respectivas páginas e utilizar a função "importar módulo" para inserir o conteúdo dos arquivos `.json` ao site.
+- Instalar os plugins.
+- Criar as páginas e utilizar a função "importar módulo" do Live Composer para inserir o conteúdo dos arquivos da pasta `lc-modules` no site.
