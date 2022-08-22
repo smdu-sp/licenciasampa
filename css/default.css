@@ -76,15 +76,17 @@ a:focus {
   background-position: 100% 0, 0 50%, 100% 100% !important;
 }
 
-.home.servico,
-.secao.documento {
+.home.servico {
   background-image: url(/assets/home-bg-servicos-1.png);
   background-size: calc(660 * 100vw / 1920) !important;
   background-position: 100% 0 !important;
 }
 
-.secao.documento {
+.secao.documento,
+.secao.servico {
   background-image: url(/assets/home-bg-documentos.png);
+  background-size: calc(660 * 100vw / 1920) !important;
+  background-position: 100% 0 !important;
   min-height: 1100px;
 }
 
@@ -158,7 +160,7 @@ a:focus {
     background-size: 180px, 180px !important;
   }
 
-  .home.servico, .secao.documento {
+  .secao.servico, .secao.documento {
     background-size: 660px !important;
   }
 
@@ -241,6 +243,7 @@ font-size: 2em;
 }
 .home .introducao p {
   font-size: 1.2em;
+  padding-right: 1.5rem;
 }
 
 @media (max-width: 479px) {
@@ -283,7 +286,7 @@ h2 {
 
 .topo p,
 p,
-.info.interna ul li {
+.info.interna ul > li {
   font-size: 1.35em;
   line-height: 1.5em;
 }
@@ -301,6 +304,12 @@ p,
 .info.interna ol.alpha li {
   list-style: none;
   counter-increment: item;
+  padding-bottom: 0;
+  padding-top: 0.25em;
+}
+
+.info.interna ol.alpha li:first-child {
+  padding-top: 0.75em;
 }
 
 .info.interna ol.alpha li:before {
@@ -447,7 +456,7 @@ p,
   .home.topo,
   .home.info,
   .home.avisos,
-  .home.servico,
+  .secao.servico,
   .secao.documento,
   .interna.topo,
   .interna.info {
