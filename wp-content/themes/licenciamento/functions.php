@@ -54,8 +54,8 @@ function lct_load_scripts()
 	wp_enqueue_style( 'menus', '/css/menus.css', false, '1.2', 'all');
 	wp_enqueue_style( 'botoes', '/css/botoes.css', false, '1.1', 'all');
 	wp_enqueue_style( 'paginas_ajuda', '/css/ajuda.css', false, '1.1', 'all');
+	wp_enqueue_style( 'formularios', '/css/forms.css', false, '1.1.0', 'all');
 	wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
-	wp_enqueue_style( 'cadastro', '/css/cadastro.css', false, '1.0', 'all');
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' );
@@ -111,6 +111,32 @@ function getDados(string $tabela, array $condicoes = [])
 	}
 	
 	return $resultados;
+}
+
+// Resgatar campos para gerar formulários
+function carregarFormulario(string $formNome) {
+	$tabelaCampos = "form_campos";
+	$tabelaOptions = "form_options";
+	$condicoes = ["form_nome" => "$formNome"];
+	$campos = getDados($tabelaCampos, $condicoes);
+	
+	foreach ($campos as $campo) {
+		$objAtributos = json_decode($campo->attr);
+		$strAtributos = "";
+
+		foreach ($objAtributos as $atributo => $valor) {
+			$strAtributos = $strAtributos . "$atributo=\"$valor\" ";
+		}
+
+		$campo->attr = $strAtributos;
+
+		if ($campo->tipo === 'select') {
+			$condicoesOptions = $condicoes + ["campo_nome" => $campo->campo_nome];
+			$campo->options = getDados($tabelaOptions, $condicoesOptions);
+		}
+	}
+
+	return $campos;
 }
 
 // Aproxima largura em porcentagem para grid de 12 colunas
