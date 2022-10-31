@@ -43,70 +43,158 @@
   color: #000;
 }
 
-.servico div.botao:nth-child(2n + 1),
+
 .documento div.botao:nth-child(2n + 1) {
   margin-right: 9em !important;
 }
 
-.servico div.botao:nth-child(n + 1),
+
 .documento div.botao:nth-child(n + 1) {
-  border-left: solid 8px #0a3299;
+  border-left: solid 8px #0e3b9b;
 }
 
-.servico div.botao:nth-child(n + 3),
+
 .documento div.botao:nth-child(n + 3) {
-  border-left: solid 8px #11419d;
+  border-left: solid 8px #1c58a3;
 }
 
-.servico div.botao:nth-child(n + 5),
+
 .documento div.botao:nth-child(n + 5) {
-  border-left: solid 8px #1850a1;
-}
-
-.servico div.botao:nth-child(n + 7),
-.documento div.botao:nth-child(n + 7) {
   border-left: solid 8px #1f5fa5;
 }
 
-.servico div.botao:nth-child(n + 9),
-.documento div.botao:nth-child(n + 9) {
-  border-left: solid 8px #276ea9;
+
+.documento div.botao:nth-child(n + 7) {
+  border-left: solid 8px #2367a7;
 }
 
-.servico div.botao:nth-child(n + 11),
+
+.documento div.botao:nth-child(n + 9) {
+  border-left: solid 8px #2e7dae;
+}
+
+
 .documento div.botao:nth-child(n + 11) {
   border-left: solid 8px #2e7dae;
 }
 
-.servico div.botao:nth-child(2n + 2),
+
 .documento div.botao:nth-child(2n + 2) {
   border-left: solid 8px #368cb2;
 }
 
-.servico div.botao:nth-child(2n + 4),
 .documento div.botao:nth-child(2n + 4) {
   border-left: solid 8px #3d9ab7;
 }
 
-.servico div.botao:nth-child(2n + 6),
 .documento div.botao:nth-child(2n + 6) {
   border-left: solid 8px #45a9bb;
 }
 
-.servico div.botao:nth-child(2n + 8),
 .documento div.botao:nth-child(2n + 8) {
   border-left: solid 8px #4cb7c0;
 }
 
-.servico div.botao:nth-child(2n + 10),
 .documento div.botao:nth-child(2n + 10) {
   border-left: solid 8px #54c6c4;
 }
 
-.servico div.botao:nth-child(2n + 12),
 .documento div.botao:nth-child(2n + 12) {
   border-left: solid 8px #5cd6c9;
 }
+
+
+
+
+
+.servico div.botao:nth-child(2n + 1) {
+  margin-right: 9em !important;
+}
+
+.servico div.botao:nth-child(n + 1) {
+  border-left: solid 8px #0a3299;
+}
+
+.servico div.botao:nth-child(n + 3) {
+  border-left: solid 8px #0e3b9b;
+}
+
+.servico div.botao:nth-child(n + 5) {
+  border-left: solid 8px #11419d;
+}
+
+.servico div.botao:nth-child(n + 7) {
+  border-left: solid 8px #1549a8;
+}
+
+.servico div.botao:nth-child(n + 9) {
+  border-left: solid 8px #1850a1;
+}
+
+.servico div.botao:nth-child(n + 11) {
+  border-left: solid 8px #1c58a3;
+}
+
+.servico div.botao:nth-child(n + 13) {
+  border-left: solid 8px #1f5fa5;
+}
+
+.servico div.botao:nth-child(n + 15) {
+  border-left: solid 8px #2367a7;
+}
+
+.servico div.botao:nth-child(n + 17) {
+  border-left: solid 8px #276ea9;
+}
+
+.servico div.botao:nth-child(n + 19) {
+  border-left: solid 8px #2e7dae;
+}
+
+.servico div.botao:nth-child(2n + 2) {
+  border-left: solid 8px #368cb2;
+}
+
+.servico div.botao:nth-child(2n + 4) {
+  border-left: solid 8px #3a94b5;
+}
+
+.servico div.botao:nth-child(2n + 6) {
+  border-left: solid 8px #3d9ab7;
+}
+
+.servico div.botao:nth-child(2n + 8) {
+  border-left: solid 8px #41a1b9;
+}
+
+.servico div.botao:nth-child(2n + 10) {
+  border-left: solid 8px #45a9bb;
+}
+
+.servico div.botao:nth-child(2n + 12){
+  border-left: solid 8px #49b0be;
+}
+
+.servico div.botao:nth-child(2n + 14) {
+  border-left: solid 8px #4cb7c0;
+}
+
+.servico div.botao:nth-child(2n + 16) {
+  border-left: solid 8px #50bfc2;
+}
+
+.servico div.botao:nth-child(2n + 18) {
+  border-left: solid 8px #54c6c4;
+}
+
+.servico div.botao:nth-child(2n + 20) {
+  border-left: solid 8px #5cd6c9;
+}
+
+
+
+
+
 
 /* Botões das páginas informativas */
 .info div.botao {
@@ -149,61 +237,138 @@
     font-size: 1.4em;
   }
 
-  .servico div.botao:nth-child(n + 2),
+
+
   .documento div.botao:nth-child(n + 2) {
-    border-left: solid 8px #11419d;
+    border-left: solid 8px #0e3b9b;
   }
 
-  .servico div.botao:nth-child(n + 3),
   .documento div.botao:nth-child(n + 3) {
-    border-left: solid 8px #1850a1;
-  }
-
-  .servico div.botao:nth-child(n + 4),
-  .documento div.botao:nth-child(n + 4) {
     border-left: solid 8px #1f5fa5;
   }
 
-  .servico div.botao:nth-child(n + 5),
-  .documento div.botao:nth-child(n + 5) {
-    border-left: solid 8px #276ea9;
+  .documento div.botao:nth-child(n + 4) {
+    border-left: solid 8px #2367a7;
   }
 
-  .servico div.botao:nth-child(n + 6),
+  .documento div.botao:nth-child(n + 5) {
+    border-left: solid 8px #2e7dae;
+  }
+
   .documento div.botao:nth-child(n + 6) {
     border-left: solid 8px #2e7dae;
   }
 
-  .servico div.botao:nth-child(n + 7),
   .documento div.botao:nth-child(n + 7) {
     border-left: solid 8px #368cb2;
   }
 
-  .servico div.botao:nth-child(n + 8),
   .documento div.botao:nth-child(n + 8) {
     border-left: solid 8px #3d9ab7;
   }
 
-  .servico div.botao:nth-child(n + 9),
   .documento div.botao:nth-child(n + 9) {
     border-left: solid 8px #45a9bb;
   }
 
-  .servico div.botao:nth-child(n + 10),
   .documento div.botao:nth-child(n + 10) {
     border-left: solid 8px #4cb7c0;
   }
 
-  .servico div.botao:nth-child(n + 11),
   .documento div.botao:nth-child(n + 11) {
     border-left: solid 8px #54c6c4;
   }
 
-  .servico div.botao:nth-child(n + 12),
   .documento div.botao:nth-child(n + 12) {
     border-left: solid 8px #5cd6c9;
   }
+
+
+
+
+
+  .servico div.botao:nth-child(n + 2) {
+    border-left: solid 8px #0e3b9b;
+  }
+
+  .servico div.botao:nth-child(n + 3) {
+    border-left: solid 8px #11419d;
+  }
+
+  .servico div.botao:nth-child(n + 4) {
+    border-left: solid 8px #1549a8;
+  }
+
+  .servico div.botao:nth-child(n + 5) {
+    border-left: solid 8px #1850a1;
+  }
+
+  .servico div.botao:nth-child(n + 6) {
+    border-left: solid 8px #1c58a3;
+  }
+
+  .servico div.botao:nth-child(n + 7) {
+    border-left: solid 8px #1f5fa5;
+  }
+
+  .servico div.botao:nth-child(n + 8) {
+    border-left: solid 8px #2367a7;
+  }
+
+  .servico div.botao:nth-child(n + 9) {
+    border-left: solid 8px #276ea9;
+  }
+
+  .servico div.botao:nth-child(n + 10) {
+    border-left: solid 8px #2e7dae;
+  }
+
+  .servico div.botao:nth-child(n + 11) {
+    border-left: solid 8px #2e7dae;
+  }
+
+  .servico div.botao:nth-child(n + 12) {
+    border-left: solid 8px #368cb2;
+  }
+
+  .servico div.botao:nth-child(n + 13) {
+    border-left: solid 8px  #3a94b5;
+  }
+  
+  .servico div.botao:nth-child(n + 14) {
+    border-left: solid 8px #3d9ab7;
+  }
+  
+  .servico div.botao:nth-child(n + 15) {
+    border-left: solid 8px #41a1b9;
+  }
+
+  .servico div.botao:nth-child(n + 16) {
+    border-left: solid 8px #45a9bb;
+  }
+  
+  .servico div.botao:nth-child(n + 17) {
+    border-left: solid 8px #49b0be;
+  }
+  
+  .servico div.botao:nth-child(n + 18) {
+    border-left: solid 8px #4cb7c0;
+  }
+  
+  .servico div.botao:nth-child(n + 19) {
+    border-left: solid 8px #50bfc2;
+  }
+
+  .servico div.botao:nth-child(n + 20) {
+    border-left: solid 8px #54c6c4;
+  }
+  
+  .servico div.botao:nth-child(n + 21) {
+    border-left: solid 8px #5cd6c9;
+  }
+  
 }
+
 
 /* Botões da página "Outras Secretarias" */
 .info.secretarias div.botao {

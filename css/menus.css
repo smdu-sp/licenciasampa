@@ -146,6 +146,10 @@
   .header .dslc-mobile-navigation select {
     height: 72px !important;
   }
+
+  .botao-voltar {
+    display: none;
+  }
 }
 
 @media (max-width: 459px) {
