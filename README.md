@@ -1,4 +1,6 @@
-## AprovaSP
+## Licencia Sampa
+
+Front-end e tema do WordPress do site [Licencia Sampa](https://licenciasampa.prefeitura.sp.gov.br/).
 
 ### Configuração de ambiente em servidor Ubuntu 22.04
 
