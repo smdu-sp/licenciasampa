@@ -49,13 +49,7 @@ function lct_load_scripts()
 	wp_enqueue_style( 'dashicons' );
 	
 	// Personalização
-	wp_enqueue_style( 'acessivel', '/css/acessivel.css', false, '1.0', 'all');
-	wp_enqueue_style( 'default', '/css/default.css', false, '1.7', 'all');
-	wp_enqueue_style( 'menus', '/css/menus.css', false, '1.2', 'all');
-	wp_enqueue_style( 'botoes', '/css/botoes.css', false, '1.1', 'all');
-	wp_enqueue_style( 'paginas_ajuda', '/css/ajuda.css', false, '1.1', 'all');
-	wp_enqueue_style( 'formularios', '/css/forms.css', false, '1.1.0', 'all');
-	wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
+	wp_enqueue_style( 'default', '/css/default.css', false, '2.0', 'all');
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' );
@@ -159,6 +153,7 @@ function calculaCol($pct)
 // Shortcodes
 // Adiciona o botão "Voltar" em todas as páginas, exceto na página principal
 add_shortcode('shortcodeBotaoVoltar', 'shortcodeBotaoVoltar');
+add_shortcode('shortcodeBotaoLogin', 'shortcodeBotaoLogin');
 
 function shortcodeBotaoVoltar() {
 	
@@ -166,3 +161,32 @@ require_once "modulo-botao-voltar.php";
 
 return ob_get_clean();
 }
+
+function shortcodeBotaoLogin() {
+	
+require_once "modulo-botao-login.php";
+
+return ob_get_clean();
+}
+
+function adicionar_meta()
+{
+	$object_type = 'post'; // The object type. 
+	// For custom post types, this is 'post', for custom comment types, this is 'comment'.
+
+	$args1 = array(
+		'type'		=> 'string', // Validate and sanitize the meta value as a string.
+		// Default: 'string'.  
+		// In 4.7 one of 'string', 'boolean', 'integer', 'number' must be used as 'type'. 
+		'description'    => 'Tipo da página', // Shown in the schema for the meta key.
+		'single'        => true, // Return a single value of the type. Default: false.
+		'show_in_rest'    => true, // Show in the WP REST API response. Default: false.
+		'supports' => [
+			'custom-fields'
+		],
+	);
+
+	register_meta($object_type, 'grupo', $args1);
+}
+
+adicionar_meta();
