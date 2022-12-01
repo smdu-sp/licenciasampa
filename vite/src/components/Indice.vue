@@ -4,7 +4,9 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-import '@assets/css/carousel.css'
+import '@assets/css/carousel.css';
+import setaDireita from '@assets/svg/seta-direita.svg';
+console.log(setaDireita)
 
 let grupos = [
   {
@@ -70,8 +72,21 @@ onMounted(() => {
         </Slide>
 
         <template #addons>
-          <Navigation />
-          <Pagination />
+          <Navigation>
+            <template #next>
+              <InlineSvg
+                src="/assets/svg/seta-direita.svg"
+              ></InlineSvg>
+            </template>
+            <template #prev>
+              <InlineSvg
+                src="/assets/svg/seta-esquerda.svg"
+              ></InlineSvg>
+            </template>
+          </Navigation>
+          <Pagination
+            :style="`background-color: var(${grupo.cor})`"
+           />
         </template>
       </Carousel>
     </div>
@@ -80,6 +95,7 @@ onMounted(() => {
 
 <style>
 :root {
+  /* Cor dos grupos */
   --grupo1: #395aad;
   --grupo2: #517bee;
   --grupo3: #5cd6c9;
@@ -94,18 +110,9 @@ onMounted(() => {
   background-color: var(--vc-clr-primary);
   color: var(--vc-clr-white);
   font-size: 20px;
-  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.carousel__slide {
-  padding: 10px;
-}
-
-.carousel__prev, .carousel__next {
-  box-sizing: content-box;
-  border: 5px solid white;
-}
 </style>
