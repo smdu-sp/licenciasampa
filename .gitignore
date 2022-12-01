@@ -4,6 +4,7 @@
 !wp-content/
 !lc-modules/
 !css/
+!vite/
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", themes" directory
