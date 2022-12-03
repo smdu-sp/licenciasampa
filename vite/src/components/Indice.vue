@@ -1,12 +1,10 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
 
 import '@assets/css/carousel.css';
-import setaDireita from '@assets/svg/seta-direita.svg';
-console.log(setaDireita)
 
 let grupos = [
   {
@@ -44,6 +42,11 @@ const grupoSelecionado = ref(0);
 const postsAgrupados = ref({});
 const abaHover = ref(null);
 
+// Computed
+const estiloAba = computed(() => {
+
+});
+
 onMounted(() => {
   axios
     .get('/wp-json/wp/v2/pages/?per_page=100')
@@ -61,6 +64,7 @@ onMounted(() => {
         console.log(postsAgrupados.value);
     });
 });
+
 </script>
 
 <template>
@@ -69,6 +73,7 @@ onMounted(() => {
       <button
         class="aba-indice"
         :class="{ selecionado: grupoSelecionado === key, hover: abaHover === key }"
+        :style="grupoSelecionado === key || abaHover === key ? `background-color: var(${grupo.cor}); color: #fff` : ''"
         type="button" v-for="grupo, key in grupos" :key="`grupo-${key}`"
         @click="grupoSelecionado = key"
         @mouseover="abaHover = key" 
@@ -121,6 +126,8 @@ onMounted(() => {
   --grupo6: #333;
 }
 
+
+
 .carousel__item {
   min-height: 400px;
   width: 100%;
@@ -130,6 +137,11 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container-carousel-indice {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .container-abas-indice {
@@ -148,12 +160,18 @@ onMounted(() => {
 .aba-indice.selecionado,
 .aba-indice.hover {
   margin-top: 0px;
-  transition: 1s;
+  transition: margin 1s, padding 1s, color 1s, background-color 1s, border 0s;
   padding-top: 20px;
+  border-left: 3px solid transparent;
 }
 
 .aba-indice:last-of-type {
   border-right: 3px solid #d9d9d9;
+}
+
+.aba-indice:last-of-type.selecionado,
+.aba-indice:last-of-type.hover {
+  border-right: 3px solid transparent;
 }
 
 .aba-indice .aba-titulo, 

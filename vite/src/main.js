@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import './style.css';
-import App from './App.vue';
+import AppIndice from './AppIndice.vue';
 import Indice from './components/Indice.vue';
 import {
     Carousel,
@@ -10,13 +10,13 @@ import {
 } from 'vue3-carousel';
 import InlineSvg from 'vue-inline-svg';
 
-const app = createApp(App);
+const appIndice = createApp(AppIndice);
 
-app.component('Indice', Indice);
-app.component('Carousel', Carousel);
-app.component('Navigation', Navigation);
-app.component('Pagination', Pagination);
-app.component('Slide', Slide);
-app.component('InlineSvg', InlineSvg);
+appIndice.component('Indice', Indice);
+appIndice.component('Carousel', Carousel);
+appIndice.component('Navigation', Navigation);
+appIndice.component('Pagination', Pagination);
+appIndice.component('Slide', Slide);
+appIndice.component('InlineSvg', InlineSvg);
 
-app.mount('#appHome')
+appIndice.mount('#appIndice')
