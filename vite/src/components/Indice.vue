@@ -6,35 +6,35 @@ import axios from 'axios';
 
 import '@assets/css/carousel.css';
 
-let grupos = [
+const grupos = ref([]);
+grupos.value = [
   {
-    grupo: 'obras',
+    nome: 'obras',
     titulo: 'Obras, Regularização e Parcelamento',
   },
   {
-    grupo: 'seguranca',
+    nome: 'seguranca',
     titulo: 'Segurança, Acessibilidade, e Equipamentos',
   },
   {
-    grupo: 'eventos',
+    nome: 'eventos',
     titulo: 'Eventos',
   },
   {
-    grupo: 'solicitacoes',
+    nome: 'solicitacoes',
     titulo: 'Solicitações Gerais',
     subtitulo: '(Edificação, Loteamento, Logradouro e Atividades)',
   },
   {
-    grupo: 'outros',
+    nome: 'outros',
     titulo: 'Outras Informações',
   },
   {
-    grupo: 'indefinido',
+    nome: 'indefinido',
     titulo: 'A definir',
   },
-]
-
-grupos.forEach((grupo, indice) => {
+];
+grupos.value.forEach((grupo, indice) => {
   grupo['cor'] = `--grupo${indice + 1}`;
 });
 
@@ -42,12 +42,8 @@ const grupoSelecionado = ref(0);
 const postsAgrupados = ref({});
 const abaHover = ref(null);
 
-// Computed
-const estiloAba = computed(() => {
-
-});
-
 onMounted(() => {
+  // Resgata as postagens
   axios
     .get('/wp-json/wp/v2/pages/?per_page=100')
     .then(response => {
@@ -56,12 +52,29 @@ onMounted(() => {
           const grupo = post.meta.grupo
           if (grupo !== '') {
             if (grupo in postsAgrupados.value === false) {
-              postsAgrupados.value[grupo] = [];
+              postsAgrupados.value[grupo] = { 
+                slides: [[]]
+              };
             }
-            postsAgrupados.value[grupo].push(post);
+
+            let slides = postsAgrupados.value[grupo]['slides'];
+
+            let indiceAtual = slides.length - 1;
+            if (slides[indiceAtual].length > 8) {
+              slides.push([]);
+              indiceAtual += 1;
+            }
+
+            slides[indiceAtual].push(post);
           }
         });
-        console.log(postsAgrupados.value);
+
+        // 
+        grupos.value.forEach(grupo => {
+          if (grupo.nome in postsAgrupados.value) {
+            grupo['slides'] = postsAgrupados.value[grupo.nome]['slides'];
+          }
+        });
     });
 });
 
@@ -87,30 +100,32 @@ onMounted(() => {
             </span>
       </button>
     </div>
-    <div class="carousel-indice" v-for="grupo, key in grupos" :key="`grupo-${key}`">
-      <Carousel v-show="key === grupoSelecionado">
-        <Slide v-for="slide in 10" :key="slide">
-          <div class="carousel__item" :style="`background-color: var(${grupo.cor})`">{{ slide }}</div>
-        </Slide>
-
-        <template #addons>
-          <Navigation>
-            <template #next>
-              <InlineSvg
-                src="/assets/svg/seta-direita.svg"
-              ></InlineSvg>
-            </template>
-            <template #prev>
-              <InlineSvg
-                src="/assets/svg/seta-esquerda.svg"
-              ></InlineSvg>
-            </template>
-          </Navigation>
-          <Pagination
-            :style="`background-color: var(${grupo.cor})`"
-           />
-        </template>
-      </Carousel>
+    <div class="carousel-indice" v-for="grupo, keyGrupo in grupos" :key="`grupo-${keyGrupo}`">
+      <template v-if="grupo.slides && grupo.slides.length > 0">
+        <Carousel v-show="keyGrupo === grupoSelecionado">
+          <Slide v-for="slide, keyPagina in grupo.slides" :key="`slide-${keyPagina}`">
+            <div v-for="pagina, keyPost in slide" class="carousel__item" :style="`background-color: var(${grupo.cor})`" :key="`pagina-${keyPost}`">{{ pagina.title.rendered }}</div>
+          </Slide>
+          
+          <template #addons>
+            <Navigation>
+              <template #next>
+                <InlineSvg
+                  src="/assets/svg/seta-direita.svg"
+                ></InlineSvg>
+              </template>
+              <template #prev>
+                <InlineSvg
+                  src="/assets/svg/seta-esquerda.svg"
+                ></InlineSvg>
+              </template>
+            </Navigation>
+            <Pagination
+              :style="`background-color: var(${grupo.cor})`"
+            />
+          </template>
+        </Carousel>
+      </template>
     </div>
   </div>
 </template>
