@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -9,4 +10,19 @@ export default defineConfig({
     vue(),
     ViteAliases()
   ],
+  build: {
+    outDir: resolve(__dirname, 'public/dist'),
+    assetsDir: resolve(__dirname, 'public/dist/assets/'),
+    manifest: false,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'src/main.js')
+      },
+      output: {
+        entryFileNames: '[name].js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]'
+      }
+    }
+  }
 })

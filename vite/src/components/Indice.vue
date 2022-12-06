@@ -6,6 +6,8 @@ import axios from 'axios';
 
 import '@assets/css/carousel.css';
 
+const itensPorSlide = 9;
+
 const grupos = ref([]);
 grupos.value = [
   {
@@ -41,6 +43,7 @@ grupos.value.forEach((grupo, indice) => {
 const grupoSelecionado = ref(0);
 const postsAgrupados = ref({});
 const abaHover = ref(null);
+const cardHover = ref(null);
 
 onMounted(() => {
   // Resgata as postagens
@@ -59,8 +62,9 @@ onMounted(() => {
 
             let slides = postsAgrupados.value[grupo]['slides'];
 
+            // Separa as postagens para paginação do carousel
             let indiceAtual = slides.length - 1;
-            if (slides[indiceAtual].length > 8) {
+            if (slides[indiceAtual].length >= itensPorSlide) {
               slides.push([]);
               indiceAtual += 1;
             }
@@ -89,7 +93,7 @@ onMounted(() => {
         :style="grupoSelecionado === key || abaHover === key ? `background-color: var(${grupo.cor}); color: #fff` : ''"
         type="button" v-for="grupo, key in grupos" :key="`grupo-${key}`"
         @click="grupoSelecionado = key"
-        @mouseover="abaHover = key" 
+        @mouseover="abaHover = key"
         @mouseout="abaHover = null"
       >
             <span class="aba-titulo">
@@ -103,8 +107,25 @@ onMounted(() => {
     <div class="carousel-indice" v-for="grupo, keyGrupo in grupos" :key="`grupo-${keyGrupo}`">
       <template v-if="grupo.slides && grupo.slides.length > 0">
         <Carousel v-show="keyGrupo === grupoSelecionado">
-          <Slide v-for="slide, keyPagina in grupo.slides" :key="`slide-${keyPagina}`">
-            <div v-for="pagina, keyPost in slide" class="carousel__item" :style="`background-color: var(${grupo.cor})`" :key="`pagina-${keyPost}`">{{ pagina.title.rendered }}</div>
+          <Slide v-for="slide, keySlide in grupo.slides" :style="`background-color: var(${grupo.cor})`" :key="`slide-${keySlide}`">
+            <div class="h-100 w-100 row slide-container">
+              <div v-for="card, keyCard in slide" class="carousel__item col-4 card-indice-container" :key="`card-${keyCard}`">
+                <a :href="card.link">
+                  <div
+                    class="card-indice"
+                    :class="cardHover === keyCard ? 'hover' : ''"
+                    @mouseover="cardHover = keyCard" 
+                    @mouseout="cardHover = null"
+                  >
+                    <div class="card-decoracao" :style="`background-color: var(${grupo.cor});`"></div>
+                    <h3>
+                      {{ card.meta.titulo ? card.meta.titulo : card.title.rendered }}
+                    </h3>
+                    <p>{{ card.meta.descricao }}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
           </Slide>
           
           <template #addons>
@@ -141,17 +162,82 @@ onMounted(() => {
   --grupo6: #333;
 }
 
+.slide-container {
+  padding: 5px 50px 10px 50px;
+  align-content: flex-start;
+  min-height: 740px;
+}
 
+.card-indice-container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  height: fit-content;
+}
 
-.carousel__item {
-  min-height: 400px;
+.carousel-indice .card-indice-container:nth-of-type(n + 7) {
+  padding-bottom: 0;
+}
+
+.card-indice {
+  min-height: 200px;
   width: 100%;
-  background-color: var(--vc-clr-primary);
-  color: var(--vc-clr-white);
+  background-color: #fbfbfb;
+  color: #333;
   font-size: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 3px 1px 13px 1px rgba(0, 0, 0, 0.1);
+}
+
+.card-decoracao {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 44px;
+  width: 20%;
+  border-bottom-left-radius: 100px;
+  transition: 0.3s;
+}
+
+.card-indice.hover .card-decoracao {
+  background-color: transparent !important;
+}
+
+.card-indice.hover h3 {
+  color: var(--blue100);
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.card-indice.hover p {
+  margin-bottom: 0;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.card-indice * {
+  font-family: Roboto, Arial, sans-serif;
+  text-align: left;
+}
+
+.card-indice h3 {
+  font-size: 1.9rem;
+  line-height: 1.4;
+  font-weight: 700;
+  padding-right: 20px;
+}
+
+.card-indice p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 .container-carousel-indice {

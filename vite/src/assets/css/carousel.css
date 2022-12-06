@@ -108,11 +108,11 @@
 }
 
 .carousel__prev {
-  left: 16px;
+  left: 0px;
 }
 
 .carousel__next {
-  right: 16px;
+  right: 0px;
 }
 
 .carousel--rtl .carousel__prev {
