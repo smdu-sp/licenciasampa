@@ -179,10 +179,7 @@ function shortcodeTitulo() {
 
 function adicionar_meta()
 {
-	$object_type = 'post'; // The object type. 
-	// For custom post types, this is 'post', for custom comment types, this is 'comment'.
-
-	$args1 = array(
+	$argsGrupo = array(
 		'type'		=> 'string', // Validate and sanitize the meta value as a string.
 		// Default: 'string'.  
 		// In 4.7 one of 'string', 'boolean', 'integer', 'number' must be used as 'type'. 
@@ -194,7 +191,33 @@ function adicionar_meta()
 		],
 	);
 
-	register_meta($object_type, 'grupo', $args1);
+	$argsTitulo = array(
+		'type'		=> 'string', // Validate and sanitize the meta value as a string.
+		// Default: 'string'.  
+		// In 4.7 one of 'string', 'boolean', 'integer', 'number' must be used as 'type'. 
+		'description'    => 'Título alternativo para utilização no índice de páginas', // Shown in the schema for the meta key.
+		'single'        => true, // Return a single value of the type. Default: false.
+		'show_in_rest'    => true, // Show in the WP REST API response. Default: false.
+		'supports' => [
+			'custom-fields'
+		],
+	);
+
+	$argsDescricao = array(
+		'type'		=> 'string', // Validate and sanitize the meta value as a string.
+		// Default: 'string'.  
+		// In 4.7 one of 'string', 'boolean', 'integer', 'number' must be used as 'type'. 
+		'description'    => 'Descrição a ser usada no índice de páginas', // Shown in the schema for the meta key.
+		'single'        => true, // Return a single value of the type. Default: false.
+		'show_in_rest'    => true, // Show in the WP REST API response. Default: false.
+		'supports' => [
+			'custom-fields'
+		],
+	);
+
+	register_meta('post', 'grupo', $argsGrupo);
+	register_meta('post', 'titulo', $argsTitulo);
+	register_meta('post', 'descricao', $argsDescricao);
 }
 
 adicionar_meta();
