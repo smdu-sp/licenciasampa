@@ -256,6 +256,10 @@ h1 {
     height: 146px;
 }
 
+.titulo-decorado h1 {
+    display: inline-block;
+}
+
 .titulo-decorado h1::after {
     margin-top: 0.9rem;
     display: block;

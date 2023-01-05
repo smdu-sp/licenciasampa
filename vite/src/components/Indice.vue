@@ -49,7 +49,6 @@ function corElementos(intGrupo) {
   const root = document.querySelector(':root');
   const svgPrev = document.querySelectorAll('.carousel__prev svg g path');
   const svgNext = document.querySelectorAll('.carousel__next svg g path');
-  console.log(svgPrev.length)
 
   // Executa novamente caso os elementos ainda não tenham carregado
   if (svgPrev.length === 0 || svgNext.length === 0) {
@@ -330,6 +329,6 @@ onMounted(() => {
 }
 
 svg {
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
 }
 </style>
