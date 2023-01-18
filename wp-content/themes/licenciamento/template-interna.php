@@ -58,19 +58,65 @@ if (have_posts()) : while (have_posts()) : the_post();
         margin-top: 30px;
     }
 
-    .interna .assuntos-accordion {
-        padding: 36px;        
-        border-radius: 5px;
-        background-color: #fff;
+    .interna .container-accordion {
+        margin-top: 40px;
     }
 
     .interna .assunto-titulo {
+        border-radius: 5px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
         font-size: 2.4rem;
         font-weight: 700;
         color: var(--black01);
+        cursor: pointer;
+        background-color: #f5f5f5;
+        transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
     }
 
-    .interna .assunto-sistemas {
+    .interna .assunto-titulo.aberto {
+        background-color: transparent;
+        box-shadow: none;
+        transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    }
+
+    .interna .assunto-titulo h3 {
+        width: 100%;
+    }
+
+    .interna .assunto-titulo button {        
+        padding: 0 36px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        min-height: 80px;
+    }
+
+    .interna .assuntos-accordion {
+        border-radius: 5px;
+        background-color: #fff;
+        overflow: hidden;
+        padding: 0 36px;
+        max-height: 0;
+        transition: padding 0.3s ease-in-out, max-height 0.3s ease-in-out;
+    }
+ 
+    .interna .assuntos-accordion:not([aria-hidden="true"]) {
+        padding: 36px;
+        max-height: 2000px;
+        transition: padding 0.3s ease-in-out, max-height 0.3s ease-in-out;
+    }
+
+    .interna .botao-abrir:not([aria-expanded="false"]) img {
+        rotate: 180deg;
+    }
+    
+    .interna .assunto-titulo .botao-abrir {
+        margin-right: 24px;
+        background-color: transparent;
     }
 
     .interna .assunto-conteudo {
@@ -158,6 +204,12 @@ if (have_posts()) : while (have_posts()) : the_post();
         text-decoration: none;
         font-size: 1.6rem;
         font-weight: 700;
+    }
+
+    .legislacao-botao a .botao {
+        min-height: 64px;
+        display: flex;
+        align-items: center;
     }
 
     .legislacao-botao img {

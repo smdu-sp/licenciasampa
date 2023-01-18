@@ -18,29 +18,59 @@
     <?php for ($i=1; $i <= 3; $i++) { 
         if ($assuntos["ativo_{$i}"] && $assuntos["titulo_{$i}"]) {
     ?>
-    <div class="assuntos-accordion">
+    <div id="accordion-<?= $i ?>" class="container-accordion">
         <div class="assunto-titulo">
-            <h3><?= $assuntos["titulo_{$i}"] ?></h3>
+            <h3>
+                <button type="button"
+                        class="botao-abrir"
+                        id="accordion-header-<?= $i ?>"
+                        aria-expanded="false"
+                        aria-controls="accordion-panel-<?= $i ?>"
+                        data-accordion-header>
+                    <?= $assuntos["titulo_{$i}"] ?><img src="/assets/svg/seta-baixo-accordion.svg" alt="Seta abrir" aria-hidden="true">
+                </button>
+            </h3>
         </div>
-        <div class="assunto-sistemas">
-            <?php foreach ($assuntos["sistemas_{$i}"] as $key => $sistema) { ?>
-                <div class="assunto-conteudo">
-                    <div class="assunto-texto">
-                        <?= wpautop($assuntos["textos_{$i}"][$sistema]) ?>
+        <section class="assuntos-accordion"
+                    id="accordion-panel-<?= $i ?>"
+                    aria-labelledby="accordion-header-<?= $i ?>"
+                    aria-hidden="true"
+                    inert>
+            <div class="assunto-sistemas">
+                <?php foreach ($assuntos["sistemas_{$i}"] as $key => $sistema) { ?>
+                    <div class="assunto-conteudo">
+                        <div class="assunto-texto">
+                            <?= wpautop($assuntos["textos_{$i}"][$sistema]) ?>
+                        </div>
+                        <div class="assunto-botao">
+                            <a href="<?= $botoes_sistemas[$sistema]["url"] ?>">
+                                <div class="botao">
+                                    <span><?= $botoes_sistemas[$sistema]["texto"] ?></span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="assunto-botao">
-                        <a href="<?= $botoes_sistemas[$sistema]["url"] ?>">
-                            <div class="botao">
-                                <span><?= $botoes_sistemas[$sistema]["texto"] ?></span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
+                <?php } ?>
+            </div>
+                </section>
     </div>
     <?php
         }
     }
     ?>
 </div>
+
+<script>
+const accordionHeaders = document.querySelectorAll('[data-accordion-header]');
+Array.prototype.forEach.call(accordionHeaders, accordionHeader => {
+  const titulo = accordionHeader.parentElement.parentElement;
+  const conteudo = titulo.nextElementSibling;
+  accordionHeader.onclick = () => {
+    const expanded = accordionHeader.getAttribute('aria-expanded') === 'true' || false;
+    accordionHeader.setAttribute('aria-expanded', !expanded);
+    conteudo.inert = expanded;
+    conteudo.setAttribute('aria-hidden', expanded);
+    titulo.classList.toggle('aberto', !expanded);
+  }
+});
+</script>
