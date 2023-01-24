@@ -1,7 +1,7 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import axios from 'axios';
 
 import '@assets/css/carousel.css';
@@ -9,6 +9,7 @@ import '@assets/css/carousel.css';
 const itensPorSlide = 9;
 
 const grupos = ref([]);
+
 grupos.value = [
   {
     nome: 'obras',
@@ -30,20 +31,48 @@ grupos.value = [
   {
     nome: 'outros',
     titulo: 'Outras Informações',
-  },
-  {
-    nome: 'indefinido',
-    titulo: 'A definir',
-  },
+  }
 ];
+
 grupos.value.forEach((grupo, indice) => {
-  grupo['cor'] = `--grupo${indice + 1}`;
+  grupo['corPrimaria'] = `--aba-grupo${indice + 1}`;
+  grupo['corSecundaria'] = `--bg-grupo${indice + 1}`;
 });
 
 const grupoSelecionado = ref(0);
 const postsAgrupados = ref({});
 const abaHover = ref(null);
 const cardHover = ref(null);
+
+function corElementos(intGrupo) {
+  const indice = intGrupo;
+  const root = document.querySelector(':root');
+  const svgPrev = document.querySelectorAll('.carousel__prev svg g path');
+  const svgNext = document.querySelectorAll('.carousel__next svg g path');
+
+  // Executa novamente caso os elementos ainda não tenham carregado
+  if (svgPrev.length === 0 || svgNext.length === 0) {
+    window.setTimeout(() => {
+      corElementos(indice);
+    }, 50);
+    return;
+  }
+
+  // Cor do Pagination  
+  root.style.setProperty('--vc-pgn-active-color', `var(--aba-grupo${intGrupo + 1})`);
+
+  // // Cores dos SVGs prev e next
+  svgPrev.forEach(svg => {
+    svg.setAttribute('fill', `var(--aba-grupo${intGrupo + 1})`)
+  });
+  svgNext.forEach(svg => {
+    svg.setAttribute('fill', `var(--aba-grupo${intGrupo + 1})`);
+  });
+}
+
+watch(grupoSelecionado, () => {
+  corElementos(grupoSelecionado.value);
+});
 
 onMounted(() => {
   // Resgata as postagens
@@ -79,6 +108,9 @@ onMounted(() => {
             grupo['slides'] = postsAgrupados.value[grupo.nome]['slides'];
           }
         });
+    })
+    .finally(() => {
+      corElementos(grupoSelecionado.value);
     });
 });
 
@@ -90,7 +122,7 @@ onMounted(() => {
       <button
         class="aba-indice"
         :class="{ selecionado: grupoSelecionado === key, hover: abaHover === key }"
-        :style="grupoSelecionado === key || abaHover === key ? `background-color: var(${grupo.cor}); color: #fff` : ''"
+        :style="grupoSelecionado === key || abaHover === key ? `background-color: var(${grupo.corPrimaria}); color: #fff` : ''"
         type="button" v-for="grupo, key in grupos" :key="`grupo-${key}`"
         @click="grupoSelecionado = key"
         @mouseover="abaHover = key"
@@ -107,7 +139,7 @@ onMounted(() => {
     <div class="carousel-indice" v-for="grupo, keyGrupo in grupos" :key="`grupo-${keyGrupo}`">
       <template v-if="grupo.slides && grupo.slides.length > 0">
         <Carousel v-show="keyGrupo === grupoSelecionado">
-          <Slide v-for="slide, keySlide in grupo.slides" :style="`background-color: var(${grupo.cor})`" :key="`slide-${keySlide}`">
+          <Slide v-for="slide, keySlide in grupo.slides" :style="`background-color: var(${grupo.corSecundaria})`" :key="`slide-${keySlide}`">
             <div class="h-100 w-100 row slide-container">
               <div v-for="card, keyCard in slide" class="carousel__item col-4 card-indice-container" :key="`card-${keyCard}`">
                 <a :href="card.link">
@@ -117,7 +149,7 @@ onMounted(() => {
                     @mouseover="cardHover = keyCard" 
                     @mouseout="cardHover = null"
                   >
-                    <div class="card-decoracao" :style="`background-color: var(${grupo.cor});`"></div>
+                    <div class="card-decoracao" :style="`background-color: var(${grupo.corPrimaria});`"></div>
                     <h3>
                       {{ card.meta.titulo ? card.meta.titulo : card.title.rendered }}
                     </h3>
@@ -142,7 +174,7 @@ onMounted(() => {
               </template>
             </Navigation>
             <Pagination
-              :style="`background-color: var(${grupo.cor})`"
+              :style="`background-color: var(${grupo.corSecundaria})`"
             />
           </template>
         </Carousel>
@@ -154,12 +186,16 @@ onMounted(() => {
 <style>
 :root {
   /* Cor dos grupos */
-  --grupo1: #395aad;
-  --grupo2: #517bee;
-  --grupo3: #5cd6c9;
-  --grupo4: #f28d2f;
-  --grupo5: #f96a86;
-  --grupo6: #333;
+  --aba-grupo1: #395aad;
+  --aba-grupo2: #517bee;
+  --aba-grupo3: #5cd6c9;
+  --aba-grupo4: #f28d2f;
+  --aba-grupo5: #4d4e4e;
+  --bg-grupo1: #c2cbe2;
+  --bg-grupo2: #ebf0ff;
+  --bg-grupo3: #defffb;
+  --bg-grupo4: #ffeede;
+  --bg-grupo5: #ddd;
 }
 
 .slide-container {
@@ -203,6 +239,7 @@ onMounted(() => {
   height: 44px;
   width: 20%;
   border-bottom-left-radius: 100px;
+  border-top-right-radius: 12px;
   transition: 0.3s;
 }
 
@@ -291,6 +328,7 @@ onMounted(() => {
   font-weight: 400;
 }
 
-
-
+svg {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
+}
 </style>
