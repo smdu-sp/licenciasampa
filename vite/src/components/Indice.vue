@@ -80,7 +80,23 @@ onMounted(() => {
     .get('/wp-json/wp/v2/pages/?per_page=100')
     .then(response => {
         const postsRaw = response.data;
+        let postsOrdenados = [];
+
         postsRaw.forEach(post => {
+          if (post.meta.priorizar) {
+            postsOrdenados.push(post);
+          }
+        });
+
+        postsRaw.forEach(post => {
+          if (!post.meta.priorizar) {
+            postsOrdenados.push(post);
+          }
+        });
+
+        console.log(postsOrdenados)
+
+        postsOrdenados.forEach(post => {
           const grupo = post.meta.grupo
           if (grupo !== '') {
             if (grupo in postsAgrupados.value === false) {
