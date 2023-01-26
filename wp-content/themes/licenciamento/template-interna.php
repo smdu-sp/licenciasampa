@@ -31,6 +31,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                 <div class="container-sidebar">
                     <?php
                         include_once $path . 'legislacao.php';
+                        include_once $path . 'duvidas.php';
                     ?>
                 </div>
             </div>
@@ -163,7 +164,7 @@ if (have_posts()) : while (have_posts()) : the_post();
         margin-left: 30px;
     }
 
-    .container-legislacao {
+    .container-legislacao, .container-duvidas {
         margin-top: 30px;
         border-radius: 5px;
         width: 100%;
@@ -223,6 +224,29 @@ if (have_posts()) : while (have_posts()) : the_post();
     .legislacao-observacao {
         padding: 30px 8px;
         font-size: 1.2rem;
+    }
+
+    .container-duvidas * {
+        line-height: 1.6;
+    }
+
+    .duvidas-conteudo {
+        padding: 15px;
+    }
+
+    .duvidas-titulo {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    .interna.info .duvidas-texto p {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .interna.info .duvidas-texto p, .duvidas-texto span {
+        font-size: 1.6rem;
+        font-weight: 400;
     }
     </style>
 
