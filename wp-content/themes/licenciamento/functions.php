@@ -154,7 +154,6 @@ function calculaCol($pct)
 // Adiciona o botão "Voltar" em todas as páginas, exceto na página principal
 add_shortcode('shortcodeBotaoVoltar', 'shortcodeBotaoVoltar');
 add_shortcode('shortcodeBotaoLogin', 'shortcodeBotaoLogin');
-add_shortcode('shortcodeTitulo', 'shortcodeTitulo');
 
 function shortcodeBotaoVoltar() {
 	
@@ -169,13 +168,6 @@ require_once "modulo-botao-login.php";
 
 return ob_get_clean();
 }
-
-function shortcodeTitulo() {	
-	require_once "modulo-titulo.php";
-	
-	return ob_get_clean();
-}
-	
 
 function adicionar_meta()
 {
@@ -215,9 +207,22 @@ function adicionar_meta()
 		],
 	);
 
+	$argsPriorizar = array(
+		'type'		=> 'boolean', // Validate and sanitize the meta value as a string.
+		// Default: 'string'.  
+		// In 4.7 one of 'string', 'boolean', 'integer', 'number' must be used as 'type'. 
+		'description'    => 'Assuntos importantes do site, que devem ser exibidos ao topo da lista', // Shown in the schema for the meta key.
+		'single'        => true, // Return a single value of the type. Default: false.
+		'show_in_rest'    => true, // Show in the WP REST API response. Default: false.
+		'supports' => [
+			'custom-fields'
+		],
+	);
+
 	register_meta('post', 'grupo', $argsGrupo);
 	register_meta('post', 'titulo', $argsTitulo);
 	register_meta('post', 'descricao', $argsDescricao);
+	register_meta('post', 'priorizar', $argsPriorizar);
 }
 
 adicionar_meta();
