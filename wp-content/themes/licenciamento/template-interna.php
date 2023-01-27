@@ -37,7 +37,11 @@ if (have_posts()) : while (have_posts()) : the_post();
             </div>
         </div>
     </div>
-
+    <div class="interna ajuda">
+        <?php
+            include_once $path . 'ajuda.php'
+        ?>
+    </div>
     <style>
     .interna.info {
         background-color: #fff;
@@ -248,6 +252,48 @@ if (have_posts()) : while (have_posts()) : the_post();
         font-size: 1.6rem;
         font-weight: 400;
     }
+
+    .container-ajuda {
+        background-color: #f5f5f5;
+    }
+
+    .ajuda-conteudo {
+        padding: 36px 130px;
+    }
+
+    .ajuda-titulo {
+        color: var(--blue100);
+        font-size: 3.6rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .ajuda-sistema * {
+        margin-bottom: 16px;
+    }
+
+    .ajuda-sistema .sistema-titulo {
+        font-size: 2rem;
+        font-weight: 700;        
+    }
+
+    .ajuda-sistema .sistema-contato {
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    .ajuda-sistema .sistema-contato span {
+        font-weight: 500;
+    }
+
+    .ajuda-sistema .sistema-separador {
+        display: block;
+        content: "";
+        width: 66%;
+        height: 1px;
+        background-color: #000;
+    }
+    
     </style>
 
 <?php

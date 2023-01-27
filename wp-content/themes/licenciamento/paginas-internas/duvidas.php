@@ -8,7 +8,7 @@
             <h2>Dúvidas Técnicas</h2>
         </div>
         <div class="duvidas-texto">
-            <p>Dúvidas técnicas de pré-projeto e sobre legislação edilícia e urbanística</p>
+            <span>Dúvidas técnicas de pré-projeto e sobre legislação edilícia e urbanística</span>
             <span>
                 Rua São Bento, 405<br/>
                 8º andar, sala 82<br/>
