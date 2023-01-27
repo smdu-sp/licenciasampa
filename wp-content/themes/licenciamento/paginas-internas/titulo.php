@@ -1,6 +1,10 @@
 <?php 
     $atualizado = get_field( "ultima_atualizacao" );
 
+    if (!$atualizado) {
+        $atualizado = get_the_modified_date('d/m/Y H:i:s');
+    }
+
     include_once $pathRoot . 'modulo-breadcrumb.php';
 ?>
 
