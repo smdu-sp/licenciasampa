@@ -11,6 +11,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 
         $pathRoot = get_template_directory() . "/";
         $path = get_template_directory() . "/paginas-internas/";
+        $idBotoes = get_page_by_path( 'botoes', OBJECT, 'page');
 
 ?>
 
@@ -147,7 +148,7 @@ if (have_posts()) : while (have_posts()) : the_post();
     .interna .assunto-botao a {
         color: #fff;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 700;        
     }
 
