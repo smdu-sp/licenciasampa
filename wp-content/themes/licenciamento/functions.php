@@ -226,3 +226,17 @@ function adicionar_meta()
 }
 
 adicionar_meta();
+
+// Aumenta limite de páginas buscadas
+function override_per_page( $params ) {
+	$limitePaginas = 200;
+
+	if ( isset( $params ) AND isset( $params[ 'per_page' ] ) ) {
+		$params[ 'per_page' ][ 'maximum' ] = $limitePaginas;
+	}
+
+	return $params;
+}
+
+add_filter( 'rest_page_collection_params', 'override_per_page' );
+
