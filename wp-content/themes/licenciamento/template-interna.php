@@ -11,6 +11,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 
         $pathRoot = get_template_directory() . "/";
         $path = get_template_directory() . "/paginas-internas/";
+        $idBotoes = get_page_by_path( 'botoes', OBJECT, 'page');
 
 ?>
 
