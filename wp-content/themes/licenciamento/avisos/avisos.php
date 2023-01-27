@@ -3,7 +3,7 @@
     $avisos = Array();
     
     foreach ($avisosRaw as $key => $value) {
-        if(is_int($key)) {
+        if(is_int($key) && $avisosRaw[$key]['titulo']) {
             $avisos[$key] = $value;
         }
     }
@@ -20,5 +20,8 @@
         <div class="aviso-link">
             <a href="<?= $avisos[$key]['url'] ?>"><?= $avisos[$key]['texto_url'] ?></a>
         </div>
-    <?php } ?>
+        <?php if($key !== count($avisos) - 1) { ?>
+            <div class="aviso-separador"></div>
+        <?php }
+    } ?>
 </div>
