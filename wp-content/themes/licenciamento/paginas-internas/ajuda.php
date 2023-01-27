@@ -14,7 +14,7 @@
                         SLCe
                     </div>
                     <div class="sistema-contato">
-                        Contato: equipeslce@prefeitura.sp.gov.br
+                        <span>Contato:</span> equipeslce@prefeitura.sp.gov.br
                     </div>
                     <div class="sistema-separador"></div>
                 </div>
@@ -25,7 +25,7 @@
                         ANISTIA
                     </div>
                     <div class="sistema-contato">
-                        Contato: meuimovelregular@prefeitura.sp.gov.br
+                        <span>Contato:</span> meuimovelregular@prefeitura.sp.gov.br
                     </div>
                     <div class="sistema-separador"></div>
                 </div>
@@ -36,7 +36,7 @@
                         APROVA DIGITAL
                     </div>
                     <div class="sistema-contato">
-                        Contato: aprova_digital@prefeitura.sp.gov.br
+                        <span>Contato:</span> aprova_digital@prefeitura.sp.gov.br
                     </div>
                 </div>
             </div>
