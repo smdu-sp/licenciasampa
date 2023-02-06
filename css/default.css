@@ -240,7 +240,7 @@ h1 {
     background-color: var(--gray400) !important;
 }
 
-.container-indice {
+.container-indice, .container-avisos {
     width: 100%;
 }
 
