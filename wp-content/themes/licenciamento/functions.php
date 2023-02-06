@@ -39,6 +39,23 @@ if ( ! function_exists( 'lct_theme_setup' ) ) {
  */
 function lct_load_scripts()
 {
+	// App do Vue
+	wp_register_script( 'vue-client', 'http://localhost:5173/@vite/client' );
+	wp_register_script( 'vue-app', 'http://localhost:5173/src/main.js',  array( 'acf-input' ) );
+
+	wp_enqueue_script(( 'vue-client' ));
+	wp_enqueue_script(( 'vue-app' ));
+
+	add_filter( 'script_loader_tag', 'script_module', 10, 3 );
+
+	function script_module( $tag, $handle, $src ) {
+		if ( 'vue-client' === $handle || 'vue-app' === $handle ) {
+			$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+		}
+
+		return $tag;
+	}
+
 	// Bootstrap
 	wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css', false, '5.2.0', 'all');
 	
@@ -53,7 +70,6 @@ function lct_load_scripts()
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' );
-
 }
 
 add_action( 'wp_enqueue_scripts', 'lct_load_scripts' );

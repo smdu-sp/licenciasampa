@@ -14,10 +14,6 @@ if (have_posts()) : while (have_posts()) : the_post();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  <!-- App do Vue -->
-  <script type="module" src="http://localhost:5173/@vite/client"></script>
-  <script type="module" src="http://localhost:5173/src/main.js"></script>
-
   <div id="conteudo-principal" class="home secao topo" style="background-image: url('/assets/home-bg-topo-2x.png');" data-section-id="e965c998d8c">
     <div class="wrapper" class="row">
       <div class="container-introducao col-6">
@@ -44,11 +40,23 @@ if (have_posts()) : while (have_posts()) : the_post();
 
   <div class="home secao indice">
     <div class="wrapper">
-      <div class="container-indice" style="width: 100%">
+      <div class="container-indice">
         <div class="indice-titulo">
-          Verifique os documentos, serviços e informações disponíveis:
+          <h2>Verifique os documentos, serviços e informações disponíveis:</h2>
         </div>
-        <div id="appIndice" class="indice">  
+        <div id="appIndice" class="indice">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home secao avisos">
+    <div class="wrapper">
+      <div class="container-avisos">
+        <div class="avisos-titulo">
+          <h2>Avisos</h2>
+        </div>
+        <div id="appAvisos" class="avisos">
         </div>
       </div>
     </div>
