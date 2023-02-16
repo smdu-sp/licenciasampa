@@ -4,6 +4,8 @@
 import { ref, onMounted, computed, watch } from 'vue';
 import axios from 'axios';
 
+import { DateTime } from 'luxon';
+
 import '@assets/css/carousel.css';
 
 const avisos = ref([]);
@@ -22,10 +24,23 @@ onMounted(() => {
         
         Object.keys(avisosRaw).forEach(key => {
           if (avisosRaw[key] !== null && avisosRaw[key].titulo.length > 0) {
+            // Verifica se a data do aviso é válida 
+            let data = avisosRaw[key].data_publicacao;
+
+            if (DateTime.fromSQL(data).invalid) {
+              avisosRaw[key].data_publicacao = DateTime.local(2000).toSQL();
+            }
 
             avisos.value.push(avisosRaw[key]);
           }
         });
+
+        // Ordena os avisos por data de publicação, mais recentes primeiro
+        avisos.value.sort((a,b) => {
+          a = DateTime.fromSQL(a.data_publicacao);
+          b = DateTime.fromSQL(b.data_publicacao);
+          return b.diff(a).milliseconds;
+        })
     })
     .finally(() => {
       
@@ -50,7 +65,7 @@ onMounted(() => {
                   </p>
                 </div>
                 <div class="avisos-botao">
-                  <a :href="aviso.url" :aria-label="descricao_url">
+                  <a :href="aviso.url" :aria-label="aviso.descricao_url">
                     <div class="botao">{{ aviso.texto_url }}</div>
                   </a>
                 </div>
