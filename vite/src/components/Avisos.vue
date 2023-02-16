@@ -15,10 +15,10 @@ function formatarTexto(string) {
 onMounted(() => {
   // Resgata as postagens
   axios
-    .get('/wp-json/wp/v2/pages/?per_page=100')
+    .get('/wp-json/wp/v2/pages?slug=avisos')
     .then(response => {
-        const postsRaw = response.data;
-        const avisosRaw = postsRaw.find(post => post.slug === 'avisos').acf.avisos;
+        const postRaw = response.data[0];
+        const avisosRaw = postRaw.acf.avisos;
         
         Object.keys(avisosRaw).forEach(key => {
           if (avisosRaw[key] !== null && avisosRaw[key].titulo.length > 0) {
