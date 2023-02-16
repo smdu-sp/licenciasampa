@@ -40,10 +40,8 @@ if ( ! function_exists( 'lct_theme_setup' ) ) {
 function lct_load_scripts()
 {
 	// App do Vue
-	wp_register_script( 'vue-client', 'http://localhost:5173/@vite/client' );
 	wp_register_script( 'vue-app', 'http://localhost:5173/src/main.js',  array( 'acf-input' ) );
 
-	wp_enqueue_script(( 'vue-client' ));
 	wp_enqueue_script(( 'vue-app' ));
 
 	add_filter( 'script_loader_tag', 'script_module', 10, 3 );

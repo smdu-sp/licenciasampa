@@ -13,6 +13,7 @@ if (have_posts()) : while (have_posts()) : the_post();
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script type="module" src="http://localhost:5173/@vite/client"></script>
 
   <div id="conteudo-principal" class="home secao topo" style="background-image: url('/assets/home-bg-topo-2x.png');" data-section-id="e965c998d8c">
     <div class="wrapper" class="row">

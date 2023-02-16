@@ -47,8 +47,8 @@ const cardHover = ref(null);
 function corElementos(intGrupo) {
   const indice = intGrupo;
   const root = document.querySelector(':root');
-  const svgPrev = document.querySelectorAll('.carousel__prev svg g path');
-  const svgNext = document.querySelectorAll('.carousel__next svg g path');
+  const svgPrev = document.querySelectorAll('.carousel-indice .carousel__prev svg g path');
+  const svgNext = document.querySelectorAll('.carousel-indice .carousel__next svg g path');
 
   // Executa novamente caso os elementos ainda não tenham carregado
   if (svgPrev.length === 0 || svgNext.length === 0) {

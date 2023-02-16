@@ -1,0 +1,3 @@
+<template>
+  <Avisos></Avisos>
+</template>
