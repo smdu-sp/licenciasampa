@@ -194,8 +194,8 @@ onMounted(() => {
 }
 
 .container-carousel-avisos {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 100px;
 }
 
 .container-abas-avisos {
@@ -210,12 +210,19 @@ onMounted(() => {
 }
 
 .carousel-avisos {
-  background-image: url("assets/bg-avisos.png");
+  background-image: url("/assets/bg-avisos.png");
 }
 
 .avisos-titulo, .avisos-texto {
   color: #fff;
   font-family: Roboto;
+}
+
+.avisos-titulo h2 {
+  color: #395aad;
+  font-weight: 500;
+  font-size: 26px;
+  padding-left: 75px;
 }
 
 .avisos-titulo h3 {

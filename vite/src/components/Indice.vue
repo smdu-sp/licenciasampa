@@ -214,6 +214,14 @@ onMounted(() => {
   --bg-grupo5: #ddd;
 }
 
+.indice-titulo {
+  color: #333333;
+  font-weight: 500;
+  font-size: 26px;
+  padding-top: 120px;
+  padding-left: 75px;
+}
+
 .slide-container {
   padding: 5px 50px 10px 50px;
   align-content: flex-start;
