@@ -236,6 +236,10 @@ onMounted(() => {
   height: fit-content;
 }
 
+.card-indice-container a {
+  text-decoration: none;
+}
+
 .carousel-indice .card-indice-container:nth-of-type(n + 7) {
   padding-bottom: 0;
 }
