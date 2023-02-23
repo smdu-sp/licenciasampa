@@ -159,10 +159,17 @@ h1 {
 
 /* Home */
 #conteudo-principal.home.secao.topo {
-    background-image: url("/assets/home-bg-topo-2x.png");
+    background-repeat:no-repeat;
+    background-position:center top;
     background-size: 100% 100%;
     padding-top: 100px !important;
     padding-bottom: 100px !important;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 1180px;
+    margin: 0 auto;
 }
 
 #conteudo-principal .introducao {
@@ -200,10 +207,6 @@ h1 {
     color: var(--gray300);
 }
 
-#conteudo-principal .container-acesso-rapido {
-    width: 100%;
-}
-
 #conteudo-principal .acesso-rapido {
     display: flex;
     justify-content: flex-end;
@@ -219,7 +222,7 @@ h1 {
     align-self: flex-end;
 }
 
-#conteudo-principal .acesso-rapido h1 {
+#conteudo-principal .acesso-rapido h2 {
     font-size: 2.4rem;
     font-weight: 400;
     padding-right: 100px;
@@ -235,6 +238,10 @@ h1 {
 
 .home.secao {
     background-color: var(--gray400) !important;
+}
+
+.container-indice, .container-avisos {
+    width: 100%;
 }
 
 /* BOTÕES */

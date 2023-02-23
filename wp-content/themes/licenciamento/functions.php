@@ -39,6 +39,24 @@ if ( ! function_exists( 'lct_theme_setup' ) ) {
  */
 function lct_load_scripts()
 {
+	// App do Vue
+	$host = $_SERVER['HTTP_HOST'];
+	if($host === 'localhost') {
+		wp_register_script( 'vue-app', 'http://localhost:5173/src/main.js',  array( 'acf-input' ) );
+	
+		wp_enqueue_script(( 'vue-app' ));
+	
+		add_filter( 'script_loader_tag', 'script_module', 10, 3 );
+	
+		function script_module( $tag, $handle, $src ) {
+			if ( 'vue-app' === $handle ) {
+				$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+			}
+	
+			return $tag;
+		}
+	}
+	
 	// Bootstrap
 	wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css', false, '5.2.0', 'all');
 	
@@ -154,6 +172,7 @@ function calculaCol($pct)
 // Adiciona o botão "Voltar" em todas as páginas, exceto na página principal
 add_shortcode('shortcodeBotaoVoltar', 'shortcodeBotaoVoltar');
 add_shortcode('shortcodeBotaoLogin', 'shortcodeBotaoLogin');
+add_shortcode('shortcodeTitulo', 'shortcodeTitulo');
 
 function shortcodeBotaoVoltar() {
 	
@@ -165,6 +184,13 @@ return ob_get_clean();
 function shortcodeBotaoLogin() {
 	
 require_once "modulo-botao-login.php";
+
+return ob_get_clean();
+}
+
+function shortcodeTitulo() {
+	
+require_once "modulo-titulo.php";
 
 return ob_get_clean();
 }
