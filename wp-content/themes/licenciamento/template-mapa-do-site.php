@@ -34,7 +34,7 @@ if (have_posts()) : while (have_posts()) : the_post();
             }
             array_push($paginas->$primeiraLetra, $wpObj);
         }
-?>
+        ?>
 
     <div id="conteudo-principal" class="interna topo"></div>
     <div class="interna info">
@@ -46,9 +46,14 @@ if (have_posts()) : while (have_posts()) : the_post();
             </div>
             <div class="container-interna">
                 <div class="container-conteudo">
-                    <?php
-                        //
-                    ?>
+                    <?php foreach ($paginas as $inicial => $arrPosts) { ?>
+                        <h2><?= $inicial ?></h2>
+                        <ul>
+                            <?php foreach ($arrPosts as $index => $post) { ?>
+                                <li><a href="/?page_id=<?= $post->ID ?>"><?= $post->post_title ?></a></li>
+                            <?php } ?>                            
+                        </ul>
+                    <?php } ?>
                 </div>
             </div>
         </div>
