@@ -9,22 +9,18 @@ if (have_posts()) : while (have_posts()) : the_post();
 
         the_content();
 
-        $path = get_template_directory() . "/avisos/";
-        $pathRoot = get_template_directory() . "/";
-        $pathInternas = get_template_directory() . "/paginas-internas/";
-        $idBotoes = get_page_by_path( 'botoes', OBJECT, 'page');
 ?>
     <div id="conteudo-principal" class="interna topo"></div>
     <div class="interna info">
         <div class="interna-wrapper">
             <div class="container-titulo">
                 <?php
-                    include_once $pathInternas . 'titulo.php'
+                    include_once PATH_INTERNAS . 'titulo.php'
                 ?>
             </div>
             <div class="container-avisos">
                 <?php 
-                    include_once $path . 'avisos.php'
+                    include_once PATH_AVISOS . 'avisos.php'
                 ?>
             </div>
         </div>

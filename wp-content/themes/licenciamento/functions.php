@@ -11,6 +11,12 @@
 define( 'DS_LIVE_COMPOSER_HF', true );
 define( 'DS_LIVE_COMPOSER_HF_AUTO', false );
 
+// Constantes usadas em todo o site
+define ( 'ID_BOTOES', get_page_by_path( 'botoes', OBJECT, 'page')->ID);
+define ( 'PATH_ROOT', get_template_directory() . '/');
+define ( 'PATH_AVISOS', PATH_ROOT . 'avisos/');
+define ( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/');
+
 // Content Width ( WP requires it and LC uses is to figure out the wrapper width ).
 if ( ! isset( $content_width ) ) {
 	$content_width = 1180;
@@ -244,4 +250,3 @@ function override_per_page( $params ) {
 }
 
 add_filter( 'rest_page_collection_params', 'override_per_page' );
-
