@@ -174,33 +174,6 @@ function calculaCol($pct)
 	return $col;
 }
 
-// Shortcodes
-// Adiciona o botão "Voltar" em todas as páginas, exceto na página principal
-add_shortcode('shortcodeBotaoVoltar', 'shortcodeBotaoVoltar');
-add_shortcode('shortcodeBotaoLogin', 'shortcodeBotaoLogin');
-add_shortcode('shortcodeTitulo', 'shortcodeTitulo');
-
-function shortcodeBotaoVoltar() {
-	
-require_once "modulo-botao-voltar.php";
-
-return ob_get_clean();
-}
-
-function shortcodeBotaoLogin() {
-	
-require_once "modulo-botao-login.php";
-
-return ob_get_clean();
-}
-
-function shortcodeTitulo() {
-	
-require_once "modulo-titulo.php";
-
-return ob_get_clean();
-}
-
 function adicionar_meta()
 {
 	$argsGrupo = array(
