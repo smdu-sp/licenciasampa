@@ -27,7 +27,7 @@
                         aria-expanded="false"
                         aria-controls="accordion-panel-<?= $i ?>"
                         data-accordion-header>
-                    <?= $assuntos["titulo_{$i}"] ?><img src="/assets/svg/seta-baixo-accordion.svg" alt="Seta abrir" aria-hidden="true">
+                    <?= $assuntos["titulo_{$i}"] ?><img src="/assets/svg/accordion-seta-baixo.svg" alt="Seta abrir" aria-hidden="true">
                 </button>
             </h3>
         </div>

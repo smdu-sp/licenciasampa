@@ -1,11 +1,28 @@
-.fbc-items {
-    margin-left: 0 !important;
+.container-breadcrumb {
+    padding-bottom: 30px;
 }
 
-.fbc-items li:first-child {
-    padding-left: 0 !important;
+#container-breadcrumb_texto {
+    font-size: 1.4rem;
+    margin: 0 30px 0 0;
+    padding: 0;
+    color: #868788;
 }
 
-.fbc-items li:last-child span {
-    font-weight: 700;
+.container-breadcrumb .fbc-page .fbc-wrap .fbc-items li {
+    margin: auto;
+    padding: 0;
+    line-height: 26px;
+}
+
+.container-breadcrumb .fbc-page .fbc-wrap .fbc-items li .fbc-separator {
+    padding: 0 10px;
+}
+
+.container-breadcrumb a {
+    text-decoration: none;
+}
+
+.container-breadcrumb a:hover {
+    text-decoration: underline;
 }
