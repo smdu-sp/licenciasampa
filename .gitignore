@@ -5,6 +5,7 @@
 !lc-modules/
 !css/
 !vite/
+!acf.json
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", themes" directory

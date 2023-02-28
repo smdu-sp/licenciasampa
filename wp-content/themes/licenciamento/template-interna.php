@@ -149,7 +149,7 @@ if (have_posts()) : while (have_posts()) : the_post();
     .interna .assunto-botao a {
         color: #fff;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 700;        
     }
 
