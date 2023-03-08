@@ -1290,9 +1290,7 @@
             "dslc_m_size": "3",
             "module_id": "DSLC_Html",
             "element_type": "module",
-            "last": "no",
-            "dslc_m_size_last": "no",
-            "module_render_nonajax": "1"
+            "last": "no"
           }
         ]
       }

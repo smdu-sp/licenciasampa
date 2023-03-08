@@ -1,5 +1,14 @@
 <?php 
-    $botoes_legislacao = get_field( "botoes_legislacao", $idBotoes );
+    $botoes_legislacao = get_field( "botoes_legislacao", ID_BOTOES );
+    $botao_complementar_url = get_field("botoes_legislacao")['complementar_url'];
+    
+    if (isset($botao_complementar_url) && strlen($botao_complementar_url) > 0) {
+        $botoes_legislacao['complementar']['url'] = $botao_complementar_url;
+    }
+
+    if (!isset($botao_complementar_url) || strlen($botao_complementar_url) < 1) {
+        unset( $botoes_legislacao['complementar']);
+    }
 ?>
 
 <div class="container-legislacao">
