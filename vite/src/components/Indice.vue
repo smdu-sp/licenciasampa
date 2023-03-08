@@ -354,7 +354,7 @@ onMounted(() => {
   font-weight: 400;
 }
 
-svg {
+.carousel-indice svg {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
 }
 </style>

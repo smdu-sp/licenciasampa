@@ -169,4 +169,12 @@ onMounted(() => {
   height: 100%;
   display: flex; flex-direction: column; justify-content: center;
 }
+
+.carousel-avisos svg {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
+}
+
+.carousel-avisos svg path {
+  fill: #cfd8eb;
+}
 </style>
