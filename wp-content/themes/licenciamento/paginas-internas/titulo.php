@@ -5,7 +5,7 @@
         $atualizado = get_the_modified_date('d/m/Y H:i:s');
     }
 
-    include_once $pathRoot . 'modulo-breadcrumb.php';
+    include_once PATH_INTERNAS . 'breadcrumb.php';
 ?>
 
 <div class="titulo-decorado">

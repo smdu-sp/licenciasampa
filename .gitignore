@@ -1,4 +1,4 @@
-# ignore everything in the root except this file and the "wp-content" directory.
+# ignore everything in the root except this file and exceptions:
 /*
 !.gitignore
 !wp-content/
@@ -6,6 +6,12 @@
 !css/
 !vite/
 !acf.json
+
+# Incluir apenas os ícones
+!assets/
+assets/*
+!assets/favicon.ico
+!assets/svg/
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", themes" directory

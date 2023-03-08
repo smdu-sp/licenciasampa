@@ -1,5 +1,5 @@
 <?php 
-    $botoes_legislacao = get_field( "botoes_legislacao", $idBotoes );
+    $botoes_legislacao = get_field( "botoes_legislacao", ID_BOTOES );
 ?>
 
 <div class="container-legislacao">

@@ -2,7 +2,7 @@
     $textoIntroducao = get_field( "o_que_e" );
     $assuntos = get_field( "assuntos" );
     $assuntos["ativo_1"] = 1;
-    $botoes_sistemas = get_field( "botoes_sistemas", $idBotoes );
+    $botoes_sistemas = get_field( "botoes_sistemas", ID_BOTOES );
 ?>
 
 <div class="conteudo-interna">
