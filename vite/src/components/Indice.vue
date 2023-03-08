@@ -94,8 +94,6 @@ onMounted(() => {
           }
         });
 
-        console.log(postsOrdenados)
-
         postsOrdenados.forEach(post => {
           const grupo = post.meta.grupo
           if (grupo !== '') {
@@ -180,12 +178,12 @@ onMounted(() => {
             <Navigation>
               <template #next>
                 <InlineSvg
-                  src="/assets/svg/seta-direita.svg"
+                  src="/assets/svg/carousel-seta-direita.svg"
                 ></InlineSvg>
               </template>
               <template #prev>
                 <InlineSvg
-                  src="/assets/svg/seta-esquerda.svg"
+                  src="/assets/svg/carousel-seta-esquerda.svg"
                 ></InlineSvg>
               </template>
             </Navigation>
