@@ -12,10 +12,12 @@ define( 'DS_LIVE_COMPOSER_HF', true );
 define( 'DS_LIVE_COMPOSER_HF_AUTO', false );
 
 // Constantes usadas em todo o site
-define ( 'ID_BOTOES', get_page_by_path( 'botoes', OBJECT, 'page')->ID);
-define ( 'PATH_ROOT', get_template_directory() . '/');
-define ( 'PATH_AVISOS', PATH_ROOT . 'avisos/');
-define ( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/');
+if ( get_page_by_path( 'botaes' ) ) {
+	define ( 'ID_BOTOES', get_page_by_path( 'botaes', OBJECT, 'page' )->ID );
+}
+define( 'PATH_ROOT', get_template_directory() . '/' );
+define( 'PATH_AVISOS', PATH_ROOT . 'avisos/' );
+define( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/' );
 
 // Content Width ( WP requires it and LC uses is to figure out the wrapper width ).
 if ( ! isset( $content_width ) ) {
@@ -76,7 +78,7 @@ function lct_load_scripts()
 	wp_enqueue_style( 'default', '/css/default.css', false, '2.0', 'all');
 
 	// Páginas internas
-	if ( !is_front_page() ) {
+	if ( ! is_front_page() ) {
 		wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
 		wp_enqueue_style( 'paginas-internas', '/css/paginas-internas.css', false, '1.0', 'all');
 	}
