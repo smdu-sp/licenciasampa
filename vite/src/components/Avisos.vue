@@ -77,12 +77,12 @@ onMounted(() => {
             <Navigation>
               <template #next>
                 <InlineSvg
-                  src="/assets/svg/seta-direita.svg"
+                  src="/assets/svg/avisos-seta-direita.svg"
                 ></InlineSvg>
               </template>
               <template #prev>
                 <InlineSvg
-                  src="/assets/svg/seta-esquerda.svg"
+                  src="/assets/svg/avisos-seta-esquerda.svg"
                 ></InlineSvg>
               </template>
             </Navigation>
