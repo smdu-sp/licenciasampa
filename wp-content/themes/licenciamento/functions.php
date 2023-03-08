@@ -11,6 +11,12 @@
 define( 'DS_LIVE_COMPOSER_HF', true );
 define( 'DS_LIVE_COMPOSER_HF_AUTO', false );
 
+// Constantes usadas em todo o site
+define ( 'ID_BOTOES', get_page_by_path( 'botoes', OBJECT, 'page')->ID);
+define ( 'PATH_ROOT', get_template_directory() . '/');
+define ( 'PATH_AVISOS', PATH_ROOT . 'avisos/');
+define ( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/');
+
 // Content Width ( WP requires it and LC uses is to figure out the wrapper width ).
 if ( ! isset( $content_width ) ) {
 	$content_width = 1180;
@@ -39,6 +45,24 @@ if ( ! function_exists( 'lct_theme_setup' ) ) {
  */
 function lct_load_scripts()
 {
+	// App do Vue
+	$host = $_SERVER['HTTP_HOST'];
+	if($host === 'localhost') {
+		wp_register_script( 'vue-app', 'http://localhost:5173/src/main.js',  array( 'acf-input' ) );
+	
+		wp_enqueue_script(( 'vue-app' ));
+	
+		add_filter( 'script_loader_tag', 'script_module', 10, 3 );
+	
+		function script_module( $tag, $handle, $src ) {
+			if ( 'vue-app' === $handle ) {
+				$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+			}
+	
+			return $tag;
+		}
+	}
+	
 	// Bootstrap
 	wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css', false, '5.2.0', 'all');
 	
@@ -50,6 +74,12 @@ function lct_load_scripts()
 	
 	// Personalização
 	wp_enqueue_style( 'default', '/css/default.css', false, '2.0', 'all');
+
+	// Páginas internas
+	if ( !is_front_page() ) {
+		wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
+		wp_enqueue_style( 'paginas-internas', '/css/paginas-internas.css', false, '1.0', 'all');
+	}
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' );
@@ -150,25 +180,6 @@ function calculaCol($pct)
 	return $col;
 }
 
-// Shortcodes
-// Adiciona o botão "Voltar" em todas as páginas, exceto na página principal
-add_shortcode('shortcodeBotaoVoltar', 'shortcodeBotaoVoltar');
-add_shortcode('shortcodeBotaoLogin', 'shortcodeBotaoLogin');
-
-function shortcodeBotaoVoltar() {
-	
-require_once "modulo-botao-voltar.php";
-
-return ob_get_clean();
-}
-
-function shortcodeBotaoLogin() {
-	
-require_once "modulo-botao-login.php";
-
-return ob_get_clean();
-}
-
 function adicionar_meta()
 {
 	$argsGrupo = array(
@@ -219,10 +230,36 @@ function adicionar_meta()
 		],
 	);
 
+	$argsExcluirMapa = array(
+		'type'		=> 'boolean', // Validate and sanitize the meta value as a string.
+		// Default: 'string'.  
+		// In 4.7 one of 'string', 'boolean', 'integer', 'number' must be used as 'type'. 
+		'description'    => 'Página deve ser excluída do Mapa do Site?', // Shown in the schema for the meta key.
+		'single'        => true, // Return a single value of the type. Default: false.
+		'show_in_rest'    => true, // Show in the WP REST API response. Default: false.
+		'supports' => [
+			'custom-fields'
+		],
+	);
+
 	register_meta('post', 'grupo', $argsGrupo);
 	register_meta('post', 'titulo', $argsTitulo);
 	register_meta('post', 'descricao', $argsDescricao);
 	register_meta('post', 'priorizar', $argsPriorizar);
+	register_meta('post', 'excluir_mapa', $argsExcluirMapa);
 }
 
 adicionar_meta();
+
+// Aumenta limite de páginas buscadas
+function override_per_page( $params ) {
+	$limitePaginas = 200;
+
+	if ( isset( $params ) AND isset( $params[ 'per_page' ] ) ) {
+		$params[ 'per_page' ][ 'maximum' ] = $limitePaginas;
+	}
+
+	return $params;
+}
+
+add_filter( 'rest_page_collection_params', 'override_per_page' );

@@ -2,7 +2,7 @@
     $textoIntroducao = get_field( "o_que_e" );
     $assuntos = get_field( "assuntos" );
     $assuntos["ativo_1"] = 1;
-    $botoes_sistemas = get_field( "botoes_sistemas", $idBotoes );
+    $botoes_sistemas = get_field( "botoes_sistemas", ID_BOTOES );
 ?>
 
 <div class="conteudo-interna">
@@ -27,7 +27,7 @@
                         aria-expanded="false"
                         aria-controls="accordion-panel-<?= $i ?>"
                         data-accordion-header>
-                    <?= $assuntos["titulo_{$i}"] ?><img src="/assets/svg/seta-baixo-accordion.svg" alt="Seta abrir" aria-hidden="true">
+                    <?= $assuntos["titulo_{$i}"] ?><img src="/assets/svg/accordion-seta-baixo.svg" alt="Seta abrir" aria-hidden="true">
                 </button>
             </h3>
         </div>

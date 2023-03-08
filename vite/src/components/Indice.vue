@@ -47,8 +47,8 @@ const cardHover = ref(null);
 function corElementos(intGrupo) {
   const indice = intGrupo;
   const root = document.querySelector(':root');
-  const svgPrev = document.querySelectorAll('.carousel__prev svg g path');
-  const svgNext = document.querySelectorAll('.carousel__next svg g path');
+  const svgPrev = document.querySelectorAll('.carousel-indice .carousel__prev svg g path');
+  const svgNext = document.querySelectorAll('.carousel-indice .carousel__next svg g path');
 
   // Executa novamente caso os elementos ainda não tenham carregado
   if (svgPrev.length === 0 || svgNext.length === 0) {
@@ -93,8 +93,6 @@ onMounted(() => {
             postsOrdenados.push(post);
           }
         });
-
-        console.log(postsOrdenados)
 
         postsOrdenados.forEach(post => {
           const grupo = post.meta.grupo
@@ -180,12 +178,12 @@ onMounted(() => {
             <Navigation>
               <template #next>
                 <InlineSvg
-                  src="/assets/svg/seta-direita.svg"
+                  src="/assets/svg/carousel-seta-direita.svg"
                 ></InlineSvg>
               </template>
               <template #prev>
                 <InlineSvg
-                  src="/assets/svg/seta-esquerda.svg"
+                  src="/assets/svg/carousel-seta-esquerda.svg"
                 ></InlineSvg>
               </template>
             </Navigation>
@@ -214,6 +212,14 @@ onMounted(() => {
   --bg-grupo5: #ddd;
 }
 
+.indice-titulo {
+  color: #333333;
+  font-weight: 500;
+  font-size: 26px;
+  padding-top: 120px;
+  padding-left: 75px;
+}
+
 .slide-container {
   padding: 5px 50px 10px 50px;
   align-content: flex-start;
@@ -226,6 +232,10 @@ onMounted(() => {
   padding-right: 15px !important;
   padding-left: 15px !important;
   height: fit-content;
+}
+
+.card-indice-container a {
+  text-decoration: none;
 }
 
 .carousel-indice .card-indice-container:nth-of-type(n + 7) {
