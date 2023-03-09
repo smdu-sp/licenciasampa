@@ -12,10 +12,14 @@ define( 'DS_LIVE_COMPOSER_HF', true );
 define( 'DS_LIVE_COMPOSER_HF_AUTO', false );
 
 // Constantes usadas em todo o site
-define ( 'ID_BOTOES', get_page_by_path( 'botoes', OBJECT, 'page')->ID);
-define ( 'PATH_ROOT', get_template_directory() . '/');
-define ( 'PATH_AVISOS', PATH_ROOT . 'avisos/');
-define ( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/');
+if ( get_page_by_path( 'botoes' ) ) {
+	define ( 'ID_BOTOES', get_page_by_path( 'botoes', OBJECT, 'page' )->ID );
+}
+define( 'PATH_ROOT', get_template_directory() . '/' );
+define( 'PATH_AVISOS', PATH_ROOT . 'avisos/' );
+define( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/' );
+define( 'PATH_ASSETS', ABSPATH . 'assets/' );
+define( 'PATH_SVG', PATH_ASSETS . 'svg/' );
 
 // Content Width ( WP requires it and LC uses is to figure out the wrapper width ).
 if ( ! isset( $content_width ) ) {
@@ -76,7 +80,7 @@ function lct_load_scripts()
 	wp_enqueue_style( 'default', '/css/default.css', false, '2.0', 'all');
 
 	// Páginas internas
-	if ( !is_front_page() ) {
+	if ( ! is_front_page() ) {
 		wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
 		wp_enqueue_style( 'paginas-internas', '/css/paginas-internas.css', false, '1.0', 'all');
 	}
@@ -252,7 +256,7 @@ function adicionar_meta()
 adicionar_meta();
 
 // Aumenta limite de páginas buscadas
-function override_per_page( $params ) {
+function aumentar_per_page( $params ) {
 	$limitePaginas = 200;
 
 	if ( isset( $params ) AND isset( $params[ 'per_page' ] ) ) {
@@ -262,4 +266,18 @@ function override_per_page( $params ) {
 	return $params;
 }
 
-add_filter( 'rest_page_collection_params', 'override_per_page' );
+add_filter( 'rest_page_collection_params', 'aumentar_per_page' );
+
+// Inserção do arquivo SVG dentro do HTML, para permitir
+// alteração dos atributos e estilização
+function carregar_svg( $filename ) {
+	$arquivo = PATH_SVG . $filename;
+
+	// TODO: validação de $arquivo
+	
+	if ( file_exists( $arquivo ) ) {
+		return file_get_contents( $arquivo );
+	}
+
+	return '';
+}

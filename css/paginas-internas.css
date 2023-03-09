@@ -66,6 +66,10 @@
     color: #868788;
 }
 
+.atualizado-em .interna-calendario {
+    fill: #868788;
+}
+
 .atualizado-em span {
     vertical-align: sub;
     margin-left: 10px;
@@ -138,6 +142,10 @@
 .interna .assunto-titulo .botao-abrir {
     margin-right: 24px;
     background-color: transparent;
+}
+
+.interna .assunto-titulo .seta-abrir {
+    fill: #7b7b7b;
 }
 
 .interna .assunto-conteudo {

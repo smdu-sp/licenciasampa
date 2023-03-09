@@ -77,12 +77,12 @@ onMounted(() => {
             <Navigation>
               <template #next>
                 <InlineSvg
-                  src="/assets/svg/seta-direita.svg"
+                  src="/assets/svg/avisos-seta-direita.svg"
                 ></InlineSvg>
               </template>
               <template #prev>
                 <InlineSvg
-                  src="/assets/svg/seta-esquerda.svg"
+                  src="/assets/svg/avisos-seta-esquerda.svg"
                 ></InlineSvg>
               </template>
             </Navigation>
@@ -168,5 +168,13 @@ onMounted(() => {
 .aviso-container {
   height: 100%;
   display: flex; flex-direction: column; justify-content: center;
+}
+
+.carousel-avisos svg {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
+}
+
+.carousel-avisos svg path {
+  fill: #cfd8eb;
 }
 </style>
