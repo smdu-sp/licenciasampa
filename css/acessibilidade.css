@@ -1,3 +1,11 @@
-.tamanho-fonte-115{
-    font-size: 1.15rem;
+/* TAMANHO DO TEXTO */
+/* Tamanho da fonte padrão definido em default.css - 10px
+:root {
+    font-size: 10px;
+} */
+
+.tamanho-fonte-115 {
+    font-size: 11.5px;
 }
+
+/* TO-DO: DEMAIS TAMANHOS */
