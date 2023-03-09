@@ -20,6 +20,8 @@ define( 'PATH_AVISOS', PATH_ROOT . 'avisos/' );
 define( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/' );
 define( 'PATH_ASSETS', ABSPATH . 'assets/' );
 define( 'PATH_SVG', PATH_ASSETS . 'svg/' );
+define( 'PATH_JS', PATH_ROOT . 'js/' );
+define( 'PATH_CSS', PATH_ROOT . 'css/' );
 
 // Content Width ( WP requires it and LC uses is to figure out the wrapper width ).
 if ( ! isset( $content_width ) ) {
@@ -84,6 +86,9 @@ function lct_load_scripts()
 		wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
 		wp_enqueue_style( 'paginas-internas', '/css/paginas-internas.css', false, '1.0', 'all');
 	}
+
+	wp_enqueue_style( 'acessibilidade', '/css/acessibilidade.css', false, '0.1', 'all');
+	wp_enqueue_script( 'acessibilidade', '/js/acessibilidade.js', false, '0.1', false);
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' );
