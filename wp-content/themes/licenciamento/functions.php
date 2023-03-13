@@ -79,8 +79,11 @@ function lct_load_scripts()
 	// Personalização
 	wp_enqueue_style( 'default', '/css/default.css', false, '2.0', 'all');
 
+
+	
 	// Páginas internas
 	if ( ! is_front_page() ) {
+		wp_enqueue_style( 'mapa', '/css/mapa.css', false, '1.0', 'all');
 		wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
 		wp_enqueue_style( 'paginas-internas', '/css/paginas-internas.css', false, '1.0', 'all');
 	}
