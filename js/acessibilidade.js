@@ -1,16 +1,32 @@
 function aumentarTexto() {
+    if (estado <= 3) {
+        estado = estado + 1;
+    }
+    console.log(estado);
+
     // Seleciona o elemento root (tag html)
     const root = document.documentElement;
 
-    // APÓS 1º CLIQUE
-    root.className = 'tamanho-fonte-115';
-    root.className = 'tamanho-fonte-130';
-    root.className = 'tamanho-fonte-150';
-    root.className = 'tamanho-fonte-180';
+    if (estado === 0) {
+        root.className = '';
+    }
+
+    if (estado === 1) {
+        root.className = 'tamanho-fonte-115';
+    }
+    if (estado === 2) {
+        root.className = 'tamanho-fonte-130';
+    }
+    if (estado === 3) {
+        root.className = 'tamanho-fonte-150';
+    }
+    if (estado === 4) {
+        root.className = 'tamanho-fonte-180';
+    }
 
     // TO-DO: APÓS 2º CLIQUE EM DIANTE
 
-    document.documentElement.fontSize=tamanho+"px";
+    // document.documentElement.fontSize=tamanho+"px";
 
 }
 
@@ -29,7 +45,7 @@ function diminuirTexto() {
 
 }
 
-// TO-DO: GUARDAR ESTADO DO TAMANHO DE TEXTO
+var estado = 0;
 
 /*tamanho = 11.5;
 function diminuirTexto(){
