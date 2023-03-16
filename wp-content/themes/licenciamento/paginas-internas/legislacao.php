@@ -22,8 +22,8 @@
                     <a href="<?= $botao["url"] ?>">
                         <div class="botao">
                         <?php $extensao = strtolower( pathinfo( $botao["icone"], PATHINFO_EXTENSION ) );
-                            if ( $extensao === 'svg' ) { 
-                                carregar_svg( $icone . '.'  );
+                            if ( $extensao == 'svg' ) { 
+                                echo carregar_svg( $botao["icone"]);
                             } else { ?>
                             <img src="<?= $botao["icone"]?>" alt="">
                         <?php } ?>

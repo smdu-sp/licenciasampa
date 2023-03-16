@@ -273,8 +273,15 @@ add_filter( 'rest_page_collection_params', 'aumentar_per_page' );
 function carregar_svg( $filename ) {
 	$arquivo = PATH_SVG . $filename;
 
-	// TODO: validação de $arquivo
-	
+	// Permitir apenas URLs relativas
+	if ( str_contains( $filename, '/' ) || str_contains( $filename, '\\' ) ) {
+		if( str_starts_with( $filename, '/' ) || str_starts_with( $filename, '\\' ) ) {
+			$arquivo = ABSPATH . mb_substr($filename, 1);
+		} else {
+			return '';
+		}
+	}	
+
 	if ( file_exists( $arquivo ) ) {
 		return file_get_contents( $arquivo );
 	}

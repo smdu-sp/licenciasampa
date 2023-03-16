@@ -1,4 +1,8 @@
 /* PÁGINAS INTERNAS */
+:root {
+    --bg-caixas: var(--gray300);
+}
+
 .interna.topo {
     background-image: url("/assets/interna-bg-topo.png");
     background-size: 100% 100%;
@@ -95,7 +99,7 @@
     font-weight: 700;
     color: var(--black01);
     cursor: pointer;
-    background-color: #f5f5f5;
+    background-color: var(--bg-caixas);
     transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
@@ -196,7 +200,7 @@
     margin-top: 30px;
     border-radius: 5px;
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: var(--bg-caixas);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
 }
 
@@ -241,8 +245,16 @@
     align-items: center;
 }
 
-.legislacao-botao img {
+.legislacao-botao img, .legislacao-botao svg {
     margin: 0 8px 0 8px;
+}
+
+.legislacao-botao svg path {
+    fill: #7b7b7b;
+}
+
+.legislacao-botao svg path.mask {
+    fill: var(--bg-caixas);
 }
 
 .legislacao-botao span {
@@ -278,7 +290,7 @@
 }
 
 .container-ajuda {
-    background-color: #f5f5f5;
+    background-color: var(--bg-caixas);
 }
 
 .ajuda-conteudo {
