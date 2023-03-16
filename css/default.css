@@ -188,6 +188,11 @@ header {
 
 /* CONTEÚDO */
 /* Home */
+.ajuste-header {
+    display: block;
+    height: 90px;
+}
+
 #conteudo-principal.home.secao.topo {
     background-repeat:no-repeat;
     background-position:center top;

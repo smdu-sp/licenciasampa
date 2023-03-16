@@ -21,25 +21,29 @@
             <div id="acess-ajuste-conteudo" class="acess-item">
                 <ul>
                     <li>
-                        <a href="#" aria-label="Aumentar tamanho da fonte">
-                            <?= carregar_svg('acess-aumentar-texto.svg') ?>
+                        <a href="#" aria-label="Aumentar tamanho da fonte"  onclick="aumentarTexto()">
+                            <?= carregar_svg( 'acess-aumentar-texto.svg' ) ?>
                         </a>
                     </li>
                     <li>
-                        <a href="#" aria-label="Diminuir tamanho da fonte"><img src="/assets/svg/acess-diminuir-texto.svg" alt="Diminuir tamanho da fonte" aria-hidden="true" onclick="diminuirTexto()" /></a>
+                        <a href="#" aria-label="Diminuir tamanho da fonte" onclick="diminuirTexto()">
+                            <?= carregar_svg( 'acess-diminuir-texto.svg' ) ?>
+                        </a>
                     </li>
                     <li>
-                        <a href="#" aria-label="Modo de alto contraste"><img src="/assets/svg/acess-alto-contraste.svg" alt="Alto contraste" aria-hidden="true" />ALTO CONTRASTE</a>
+                        <a href="#" aria-label="Modo de alto contraste" onclick="alternarContraste()">
+                            <?= carregar_svg( 'acess-alto-contraste.svg' ) ?> ALTO CONTRASTE
+                        </a>
                     </li>
                 </ul>
             </div>
             <div id="acess-links" class="acess-item">
                 <ul>
                     <li>
-                        <a href=""><img src="/assets/svg/acess-acessibilidade.svg" alt="Acessibilidade" aria-hidden="true" />ACESSIBILIDADE</a>
+                        <a href="https://www.capital.sp.gov.br/acessibilidade/"><?= carregar_svg( 'acess-acessibilidade.svg' ) ?> ACESSIBILIDADE</a>
                     </li>
                     <li>
-                        <a href=""><img src="/assets/svg/acess-mapa-do-site.svg" alt="Mapa do site" aria-hidden="true" />MAPA</a>
+                        <a href="/<?= get_page_by_title( 'Mapa do Site' )->post_name ?>"><?= carregar_svg( 'acess-mapa-do-site.svg' ) ?> MAPA</a>
                     </li>
                     <li><a href="">Fale Conosco</a></li>
                 </ul>

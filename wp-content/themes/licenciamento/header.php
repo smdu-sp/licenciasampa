@@ -34,4 +34,4 @@
 			include_once 'header/nav.php';
 		?>
 	</header>
-	
+	<div class="ajuste-header"></div>
