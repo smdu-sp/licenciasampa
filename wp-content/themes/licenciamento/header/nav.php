@@ -9,6 +9,13 @@
             <img class="logo-smul" src="/assets/header-logo-smul.png" alt="Logo Prefeitura de São Paulo - Urbanismo e Licenciamento">
         </a>
 
-        <?php wp_nav_menu(array('menu' => 'menu-principal')); ?>
+        <?php 
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'nav-menu',
+                    'menu_class' => 'menu_container'        
+                )
+            );
+        ?>
     </div>
 </div>

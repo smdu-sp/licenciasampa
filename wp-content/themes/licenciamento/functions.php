@@ -184,6 +184,21 @@ function calculaCol($pct)
 	return $col;
 }
 
+// Registrar menus
+function registrar_menus()
+  {
+      register_nav_menus(
+          array
+          (
+              'acess-menu' => __( 'Menu de Acessibilidade' ),
+              'nav-menu' => __( 'Menu Navegação do Header' ),
+              'footer-menu' => __( 'Menu do Rodapé' ),
+          )
+      );
+}
+
+add_action( 'init', 'registrar_menus' );
+
 function adicionar_meta()
 {
 	$argsGrupo = array(
@@ -287,4 +302,17 @@ function carregar_svg( $filename ) {
 	}
 
 	return '';
+}
+
+// Utilizar shortcode para exibir ícones SVG nos rótulos dos menus
+if ( ! has_filter( 'wp_nav_menu', 'do_shortcode' ) ) {
+    add_filter( 'wp_nav_menu', 'shortcode_unautop' );
+    add_filter( 'wp_nav_menu', 'do_shortcode', 11 );
+}
+
+add_shortcode( 'icone', 'shortcode_icone' );
+
+function shortcode_icone ( $atts ) {
+	$arquivo = $atts['svg'] . '.svg';
+	return carregar_svg( $arquivo );
 }
