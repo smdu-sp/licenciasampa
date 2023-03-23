@@ -21,19 +21,19 @@
             <div id="acess-ajuste-conteudo" class="acess-item">
                 <ul>
                     <li>
-                        <a href="#" aria-label="Aumentar tamanho da fonte"  onclick="aumentarTexto()">
+                        <button type="button" onclick="aumentarTexto()" aria-label="Aumentar tamanho da fonte">
                             <?= carregar_svg( 'acess-aumentar-texto.svg' ) ?>
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#" aria-label="Diminuir tamanho da fonte" onclick="diminuirTexto()">
+                        <button type="button"  onclick="diminuirTexto()" aria-label="Diminuir tamanho da fonte">
                             <?= carregar_svg( 'acess-diminuir-texto.svg' ) ?>
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#" aria-label="Modo de alto contraste" onclick="alternarContraste()">
+                        <button type=button onclick="alternarContraste()" aria-label="Modo de alto contraste" >
                             <?= carregar_svg( 'acess-alto-contraste.svg' ) ?> ALTO CONTRASTE
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>

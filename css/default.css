@@ -74,7 +74,11 @@ body.admin-bar header {
     background-color: var(--blue100);
 }
 
-#acessivel a {
+#acessivel button {
+    background-color: transparent;
+}
+
+#acessivel a, #acessivel button {
     color: var(--white01);
     font-size: 12px;
     font-weight: 400;
