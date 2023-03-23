@@ -9,27 +9,30 @@
     color: #141414;
     text-decoration: none;
     transition-property: padding, color;
-    transition-duration: 0.200s;
 
 }
 
 .container-conteudo li {
     padding-top: 10px;
     padding-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
 .container-conteudo li:hover {
     text-decoration: underline;
-    padding-top: 0;
-    padding-bottom: 20px;
     transition-duration: 0.200s;
     text-decoration-color: #0A3299;
+    transform: translateY(-10px);
 }
 
 
 .container-conteudo li:hover a {
     color: #0A3299;
 }
+
+.container-conteudo li:not(:hover) a {
+    transform: translateY(0);
+    }
 
 h2::after {
     margin-top: 0.9rem;
@@ -50,6 +53,12 @@ h2 {
     margin-top: 70px;
 }
 
-h2:first-child{
+h2:first-child{    
     margin-top: 32px;
+}
+
+.mapa-link {
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
 }
