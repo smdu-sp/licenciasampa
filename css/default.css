@@ -65,25 +65,46 @@ h1 {
 
 
 /* ACESSIBILIDADE */
+body.admin-bar header {
+    top: 32px;
+}
+
 #acessivel {
     height: 26px;
     background-color: var(--blue100);
 }
 
-#acessivel a {
+#acessivel button {
+    background-color: transparent;
+}
+
+#acessivel a, #acessivel button {
     color: var(--white01);
     font-size: 12px;
     font-weight: 400;
+    text-decoration: none;
 }
 
-.acess-container,
-.acess-container .acess-item,
-.acess-container ul {
+.wrapper-acess {
+    height: 100%;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.wrapper-acess,
+.wrapper-acess .acess-item,
+.wrapper-acess ul {
     display: flex;
     justify-content: space-between;
 }
 
-.acess-container ul>li {
+.acess-item {
+    height: 100%;
+    align-items: center;
+}
+
+.wrapper-acess ul>li {
     list-style-type: none;
     padding-right: 30px;
 }
@@ -92,17 +113,34 @@ h1 {
     padding-right: 0;
 }
 
-/* HEADER */
-#header {
+/* NAV HEADER */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+}
+
+.wrapper-header {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav {
     height: 64px;
     background-color: var(--gray400) !important;
 }
 
-#header div {
+#nav div {
     height: 100%;
 }
 
-#header * {
+#nav * {
     color: var(--gray100);
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
@@ -111,34 +149,35 @@ h1 {
     letter-spacing: 0.2px;
 }
 
-#header .container-logos>div,
-#header .container-menu>div {
+#nav .container-logos>div,
+#nav .container-menu>div {
     display: flex;
     align-items: center;
 }
 
-#header-logos {
+#nav .logos {
     display: flex;
     justify-content: space-between;
     width: 240px;
     height: 45px;
 }
 
-#header .container-menu>div {
-    justify-content: flex-end;
-}
-
-#header .container-menu .menu-menu-principal-container {
+#nav #menu-principal {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
 }
 
-#header #menu-menu-principal .menu-item {
+#nav #menu-principal a {
+    text-decoration: none;
+}
+
+#nav #menu-principal .menu-item {
     padding-right: 50px;
 }
 
-#header #menu-menu-principal .menu-item:last-of-type {
+#nav #menu-principal .menu-item:last-of-type {
     padding-right: 0;
 }
 
@@ -152,12 +191,12 @@ h1 {
 }
 
 /* CONTEÚDO */
-/* Corrige a distância do header com position fixed */
-#dslc-main {
-    padding-top: 90px;
+/* Home */
+.ajuste-header {
+    display: block;
+    height: 90px;
 }
 
-/* Home */
 #conteudo-principal.home.secao.topo {
     background-repeat:no-repeat;
     background-position:center top;
