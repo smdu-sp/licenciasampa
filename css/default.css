@@ -162,22 +162,22 @@ header {
     height: 45px;
 }
 
-#nav #menu-menu-principal {
+#nav #menu-principal {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 100%;
 }
 
-#nav #menu-menu-principal a {
+#nav #menu-principal a {
     text-decoration: none;
 }
 
-#nav #menu-menu-principal .menu-item {
+#nav #menu-principal .menu-item {
     padding-right: 50px;
 }
 
-#nav #menu-menu-principal .menu-item:last-of-type {
+#nav #menu-principal .menu-item:last-of-type {
     padding-right: 0;
 }
 

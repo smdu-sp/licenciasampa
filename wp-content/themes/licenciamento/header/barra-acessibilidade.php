@@ -10,7 +10,7 @@
                     <a accesskey="1" href="#conteudo-principal">Ir para conteúdo <span>[1]</span></a>
                 </li>
                 <li>
-                    <a accesskey="2" href="#menu-menu-principal">Ir para menu <span>[2]</span></a>
+                    <a accesskey="2" href="#menu-principal">Ir para menu <span>[2]</span></a>
                 </li>
                 <li>
                     <a accesskey="4" href="#rodape">Ir para rodapé <span>[4]</span></a>
