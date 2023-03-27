@@ -50,7 +50,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                         <h2><?= $inicial ?></h2>
                         <ul>
                             <?php foreach ($arrPosts as $index => $post) { ?>
-                                <li class="mapa-link"><a href="/?page_id=<?= $post->ID ?>"><?= $post->post_title ?></a></li>
+                                <li class="mapa-link"><a href="/?page_id=<?= $post->ID ?>"><span><?= $post->post_title ?></span></a></li>
                             <?php } ?>                            
                         </ul>
                     <?php } ?>

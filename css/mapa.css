@@ -1,17 +1,14 @@
-
 .interna.mapa a {
     letter-spacing: -0.5px;
     font-weight: 400;
     font-size: 2rem;
     color: #141414;
     text-decoration: none;
-    transition-property: padding, color;
+    display: flex;
 }
 
 .interna.mapa .mapa-link {
     margin-top: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
     transition: transform 0.3s ease;
     width: fit-content;
 }
@@ -20,20 +17,22 @@
     margin-top: 10px;
 }
 
-.interna.mapa .mapa-link:hover {
-    text-decoration: underline;
+.interna-mapa .mapa-link span {
+    transition-property: padding, color;
+}
+
+.interna.mapa .mapa-link:not(:hover) span {
+    padding-top: 10px;
+    padding-bottom: 10px;
     transition-duration: 0.200s;
-    text-decoration-color: #0A3299;
-    transform: translateY(-10px);
 }
 
-
-.interna.mapa .mapa-link:hover a {
+.interna.mapa .mapa-link:hover span {
     color: #0A3299;
-}
-
-.interna.mapa .mapa-link:not(:hover) a {
-    transform: translateY(0);
+    padding-top: 0;
+    padding-bottom: 20px;
+    transition-duration: 0.200s;
+    text-decoration: underline;
 }
 
 h2::after {
