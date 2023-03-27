@@ -4,6 +4,7 @@
 !wp-content/
 !lc-modules/
 !css/
+!js/
 !vite/
 !acf.json
 
