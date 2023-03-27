@@ -1,38 +1,39 @@
-
-.container-conteudo a {
-    font-family: 'Roboto';
-    font-style: normal;
+.interna.mapa a {
+    letter-spacing: -0.5px;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 26.2%;
-    letter-spacing: -0.02em;
+    font-size: 2rem;
     color: #141414;
     text-decoration: none;
-    transition-property: padding, color;
-
+    display: flex;
 }
 
-.container-conteudo li {
+.interna.mapa .mapa-link {
+    margin-top: 0;
+    transition: transform 0.3s ease;
+    width: fit-content;
+}
+
+.interna.mapa .mapa-link:first-child {
+    margin-top: 10px;
+}
+
+.interna-mapa .mapa-link span {
+    transition-property: padding, color;
+}
+
+.interna.mapa .mapa-link:not(:hover) span {
     padding-top: 10px;
     padding-bottom: 10px;
-    transition: transform 0.3s ease;
-}
-
-.container-conteudo li:hover {
-    text-decoration: underline;
     transition-duration: 0.200s;
-    text-decoration-color: #0A3299;
-    transform: translateY(-10px);
 }
 
-
-.container-conteudo li:hover a {
+.interna.mapa .mapa-link:hover span {
     color: #0A3299;
+    padding-top: 0;
+    padding-bottom: 20px;
+    transition-duration: 0.200s;
+    text-decoration: underline;
 }
-
-.container-conteudo li:not(:hover) a {
-    transform: translateY(0);
-    }
 
 h2::after {
     margin-top: 0.9rem;
@@ -46,19 +47,11 @@ h2::after {
 h2 {
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 26px;
+    font-size: 3.6rem;
     color: #333333;
-    letter-spacing: -0.02em;
     margin-top: 70px;
 }
 
 h2:first-child{    
     margin-top: 32px;
-}
-
-.mapa-link {
-    height: 30px;
-    display: flex;
-    align-items: flex-end;
 }
