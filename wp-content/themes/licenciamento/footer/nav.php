@@ -34,12 +34,15 @@
                     </div>
                     <div id="dslc-module-880a95383bb">
                         <div class="dslc-html-module-content">
-                            <ul class="footer-nav">
-                                <li><a href="#">Área do Servidor</a></li>
-                                <li><a href="">Manuais de Sistemas</a></li>
-                                <li><a href="">Acesso Rápido</a></li>
-                                <li><a href="">Mapa do Site</a></li>
-                            </ul>
+                        <?php 
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'footer-menu',   
+                                        'container' => 'nav',   
+                                    )
+                                );
+                            ?>
+
                             <p>Em caso de dúvidas, <br>entre em contato pelo email: <br>licenciamento@prefeitura.sp.gov.br</p>
                         </div>
                     </div>
@@ -51,13 +54,13 @@
         
                     <div id="dslc-module-eb8c47e8012" class="dslc-module-front dslc-module-DSLC_Html dslc-in-viewport-check dslc-in-viewport-anim-none dslc-col dslc-3-col dslc-module-handle-like-regular dslc-in-viewport" data-module-id="eb8c47e8012" data-module="DSLC_Html" data-dslc-module-size="3" data-dslc-anim="none" data-dslc-anim-delay="" data-dslc-anim-duration="650" data-dslc-anim-easing="ease" data-dslc-preset="none" style="animation: 0.65s ease 0s 1 normal none running forwards;">
                         <div class="dslc-html-module-content">
-                            <ul class="footer-redes-sociais">
-                                <li><img src="/assets/svg/footer-facebook-icon.svg" alt=""></li>
-                                <li><img src="/assets/svg/footer-instagram-icon.svg" alt=""></li>
-                                <li><img src="/assets/svg/footer-twitter-icon.svg" alt=""></li>
-                                <li><img src="/assets/svg/footer-linkedin-icon.svg" alt=""></li>
-                                <li><img src="/assets/svg/footer-youtube-icon.svg" alt=""></li>
-                            </ul>
+                            <?php 
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location' => 'social-menu'       
+                                    )
+                                );
+                            ?>
                         </div>
                     </div><!-- .dslc-module -->
                 </div><!-- .dslc-module -->
