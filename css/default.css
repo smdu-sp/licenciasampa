@@ -5,35 +5,35 @@
 :root {
     --white01: #F7FAFC;
 
-    --black01: #141414;
-    --gray100: #424242;
-    --gray2: #4d4e4e;
-    --gray300: #F5F5F5;
-    --gray400: #FBFBFB;
+    --black01:  #141414;
+    --gray100:  #424242;
+    --gray2:    #4d4e4e;
+    --gray300:  #F5F5F5;
+    --gray400:  #FBFBFB;
 
-    --blue01: #0A3299;
-    --blue100: #395AAD;
-    --blue120: #6982C1;
-    --blue130: #98AAD4;
-    --blue140: #C8D2E8;
+    --blue01:   #0A3299;
+    --blue100:  #395AAD;
+    --blue120:  #6982C1;
+    --blue130:  #98AAD4;
+    --blue140:  #C8D2E8;
 
-    --blue02: #517BEE;
-    --blue200: #7294F1;
-    --blue220: #93AEF4;
-    --blue230: #B5C7F6;
-    --blue240: #D6E1F9;
+    --blue02:   #517BEE;
+    --blue200:  #7294F1;
+    --blue220:  #93AEF4;
+    --blue230:  #B5C7F6;
+    --blue240:  #D6E1F9;
 
-    --green01: #5cd6c9;
+    --green01:  #5cd6c9;
     --green110: #7BDDD3;
     --green120: #9AE4DD;
     --green130: #B9ECE8;
     --green140: #D8F3F2;
 
-    --pink01: #F94668;
-    --pink110: #F96A86;
-    --pink120: #F88EA3;
-    --pink130: #F8B2C1;
-    --pink140: #F7D6DE;
+    --pink01:   #F94668;
+    --pink110:  #F96A86;
+    --pink120:  #F88EA3;
+    --pink130:  #F8B2C1;
+    --pink140:  #F7D6DE;
 }
 
 /* ESTILO PADRÃO */
