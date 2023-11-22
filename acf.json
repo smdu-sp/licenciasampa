@@ -166,6 +166,23 @@
                                 },
                                 "default_value": "",
                                 "placeholder": "https:\/\/"
+                            },
+                            {
+                                "key": "field_655e6e2b81077",
+                                "label": "Link Imagem de Fundo",
+                                "name": "url_bg_img",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33.3",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "https:\/\/"
                             }
                         ]
                     },
@@ -304,6 +321,23 @@
                                 "key": "field_63ee6da6c1267",
                                 "label": "Link",
                                 "name": "url",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33.3",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "https:\/\/"
+                            },
+                            {
+                                "key": "field_655e6e5481078",
+                                "label": "Link Imagem de Fundo",
+                                "name": "url_bg_img",
                                 "aria-label": "",
                                 "type": "url",
                                 "instructions": "",
@@ -466,6 +500,23 @@
                                 },
                                 "default_value": "",
                                 "placeholder": "https:\/\/"
+                            },
+                            {
+                                "key": "field_655e6e8681079",
+                                "label": "Link Imagem de Fundo",
+                                "name": "url_bg_img",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33.3",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "https:\/\/"
                             }
                         ]
                     },
@@ -616,6 +667,23 @@
                                 },
                                 "default_value": "",
                                 "placeholder": "https:\/\/"
+                            },
+                            {
+                                "key": "field_655e6eab8107a",
+                                "label": "Link Imagem de Fundo",
+                                "name": "url_bg_img",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33.3",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "https:\/\/"
                             }
                         ]
                     },
@@ -754,6 +822,23 @@
                                 "key": "field_63ee6db0c127c",
                                 "label": "Link",
                                 "name": "url",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33.3",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "https:\/\/"
+                            },
+                            {
+                                "key": "field_655e6ee28107b",
+                                "label": "Link Imagem de Fundo",
+                                "name": "url_bg_img",
                                 "aria-label": "",
                                 "type": "url",
                                 "instructions": "",
@@ -1755,7 +1840,8 @@
                         "allow_custom": 0,
                         "layout": "vertical",
                         "toggle": 0,
-                        "save_custom": 0
+                        "save_custom": 0,
+                        "custom_choice_button_text": "Adicionar nova escolha"
                     },
                     {
                         "key": "field_63b7322452cdd",
@@ -2050,7 +2136,8 @@
                         "allow_custom": 0,
                         "layout": "vertical",
                         "toggle": 0,
-                        "save_custom": 0
+                        "save_custom": 0,
+                        "custom_choice_button_text": "Adicionar nova escolha"
                     },
                     {
                         "key": "field_63b7395f7f95c",
@@ -2345,7 +2432,8 @@
                         "allow_custom": 0,
                         "layout": "vertical",
                         "toggle": 0,
-                        "save_custom": 0
+                        "save_custom": 0,
+                        "custom_choice_button_text": "Adicionar nova escolha"
                     },
                     {
                         "key": "field_63b73bc70b844",
@@ -2697,6 +2785,50 @@
                 "placeholder": "",
                 "prepend": "",
                 "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_63f908e4ad6d9",
+        "title": "Mapa do Site",
+        "fields": [
+            {
+                "key": "field_63f908e453903",
+                "label": "Excluir do Mapa?",
+                "name": "excluir_mapa",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
             }
         ],
         "location": [

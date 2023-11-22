@@ -9,6 +9,7 @@ import { DateTime } from 'luxon';
 import '@assets/css/carousel.css';
 
 const avisos = ref([]);
+const urlBgImg = '/assets/bg-avisos.png';
 
 function formatarTexto(string) {
   return string.replaceAll('\n', '<br>');
@@ -54,7 +55,7 @@ onMounted(() => {
     <div class="carousel-avisos">
       <template v-if="avisos && avisos.length > 0">
         <Carousel>
-          <Slide v-for="aviso, keySlideAviso in avisos" :style="``" :key="`aviso-${keySlideAviso}`">
+          <Slide v-for="aviso, keySlideAviso in avisos" :style="`background-image: url(${aviso.url_bg_img})`" :key="`aviso-${keySlideAviso}`">
             <div class="avisos-container carousel__item">
               <div class="aviso-container">                
                 <div class="avisos-titulo">
@@ -109,10 +110,6 @@ onMounted(() => {
   height: 280px;
   padding: 0 75px;
   width: 100%;
-}
-
-.carousel-avisos {
-  background-image: url("/assets/bg-avisos.png");
 }
 
 .avisos-titulo, .avisos-texto {
