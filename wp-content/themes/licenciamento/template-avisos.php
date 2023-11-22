@@ -5,9 +5,11 @@ Template Name: Avisos
 
 get_header();
 
-if (have_posts()) : while (have_posts()) : the_post();
+if (is_user_logged_in()) :
 
-        the_content();
+    if (have_posts()) : while (have_posts()) : the_post();
+
+            the_content();
 
 ?>
     <div id="conteudo-principal" class="interna topo"></div>
@@ -37,7 +39,8 @@ if (have_posts()) : while (have_posts()) : the_post();
     </style>
 
 <?php
-    endwhile;
+        endwhile;
+    endif;
 endif;
 
 get_footer();
