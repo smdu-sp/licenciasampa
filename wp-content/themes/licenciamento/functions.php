@@ -199,6 +199,7 @@ function registrar_menus()
               'acess-menu' => __( 'Menu de Acessibilidade' ),
               'nav-menu' => __( 'Menu Navegação do Header' ),
               'footer-menu' => __( 'Menu do Rodapé' ),
+              'social-menu' => __( 'Menu Social' ),
           )
       );
 }
