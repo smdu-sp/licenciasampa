@@ -21,7 +21,13 @@
                 <div class="legislacao-botao">
                     <a href="<?= $botao["url"] ?>">
                         <div class="botao">
-                            <img src="<?= $botao["icone"]?>" alt=""><span><?= $botao["texto"] ?></span>
+                        <?php $extensao = strtolower( pathinfo( $botao["icone"], PATHINFO_EXTENSION ) );
+                            if ( $extensao == 'svg' ) { 
+                                echo carregar_svg( $botao["icone"]);
+                            } else { ?>
+                            <img src="<?= $botao["icone"]?>" alt="">
+                        <?php } ?>
+                            <span><?= $botao["texto"] ?></span>
                         </div>
                     </a>
                 </div>

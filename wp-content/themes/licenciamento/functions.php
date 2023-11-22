@@ -12,10 +12,14 @@ define( 'DS_LIVE_COMPOSER_HF', true );
 define( 'DS_LIVE_COMPOSER_HF_AUTO', false );
 
 // Constantes usadas em todo o site
-define ( 'ID_BOTOES', get_page_by_path( 'botoes', OBJECT, 'page')->ID);
-define ( 'PATH_ROOT', get_template_directory() . '/');
-define ( 'PATH_AVISOS', PATH_ROOT . 'avisos/');
-define ( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/');
+if ( get_page_by_path( 'botoes' ) ) {
+	define ( 'ID_BOTOES', get_page_by_path( 'botoes', OBJECT, 'page' )->ID );
+}
+define( 'PATH_ROOT', get_template_directory() . '/' );
+define( 'PATH_AVISOS', PATH_ROOT . 'avisos/' );
+define( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/' );
+define( 'PATH_ASSETS', ABSPATH . 'assets/' );
+define( 'PATH_SVG', PATH_ASSETS . 'svg/' );
 
 // Content Width ( WP requires it and LC uses is to figure out the wrapper width ).
 if ( ! isset( $content_width ) ) {
@@ -75,12 +79,18 @@ function lct_load_scripts()
 	// Personalização
 	wp_enqueue_style( 'default', '/css/default.css', false, '2.0', 'all');
 
+
+	
 	// Páginas internas
-	if ( !is_front_page() ) {
+	if ( ! is_front_page() ) {
 		wp_enqueue_style( 'breadcrumb', '/css/breadcrumb.css', false, '1.0', 'all');
 		wp_enqueue_style( 'paginas-internas', '/css/paginas-internas.css', false, '1.0', 'all');
 	}
 
+	if ( is_page( 'mapa-do-site')) {
+		wp_enqueue_style( 'mapa', '/css/mapa.css', false, '1.0', 'all');
+	}
+	
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' );
 
@@ -180,6 +190,22 @@ function calculaCol($pct)
 	return $col;
 }
 
+// Registrar menus
+function registrar_menus()
+  {
+      register_nav_menus(
+          array
+          (
+              'acess-menu' => __( 'Menu de Acessibilidade' ),
+              'nav-menu' => __( 'Menu Navegação do Header' ),
+              'footer-menu' => __( 'Menu do Rodapé' ),
+              'social-menu' => __( 'Menu Social' ),
+          )
+      );
+}
+
+add_action( 'init', 'registrar_menus' );
+
 function adicionar_meta()
 {
 	$argsGrupo = array(
@@ -252,7 +278,7 @@ function adicionar_meta()
 adicionar_meta();
 
 // Aumenta limite de páginas buscadas
-function override_per_page( $params ) {
+function aumentar_per_page( $params ) {
 	$limitePaginas = 200;
 
 	if ( isset( $params ) AND isset( $params[ 'per_page' ] ) ) {
@@ -262,4 +288,38 @@ function override_per_page( $params ) {
 	return $params;
 }
 
-add_filter( 'rest_page_collection_params', 'override_per_page' );
+add_filter( 'rest_page_collection_params', 'aumentar_per_page' );
+
+// Inserção do arquivo SVG dentro do HTML, para permitir
+// alteração dos atributos e estilização
+function carregar_svg( $filename ) {
+	$arquivo = PATH_SVG . $filename;
+
+	// Permitir apenas URLs relativas
+	if ( str_contains( $filename, '/' ) || str_contains( $filename, '\\' ) ) {
+		if( str_starts_with( $filename, '/' ) || str_starts_with( $filename, '\\' ) ) {
+			$arquivo = ABSPATH . mb_substr($filename, 1);
+		} else {
+			return '';
+		}
+	}	
+
+	if ( file_exists( $arquivo ) ) {
+		return file_get_contents( $arquivo );
+	}
+
+	return '';
+}
+
+// Utilizar shortcode para exibir ícones SVG nos rótulos dos menus
+if ( ! has_filter( 'wp_nav_menu', 'do_shortcode' ) ) {
+    add_filter( 'wp_nav_menu', 'shortcode_unautop' );
+    add_filter( 'wp_nav_menu', 'do_shortcode', 11 );
+}
+
+add_shortcode( 'icone', 'shortcode_icone' );
+
+function shortcode_icone ( $atts ) {
+	$arquivo = $atts['svg'] . '.svg';
+	return carregar_svg( $arquivo );
+}
