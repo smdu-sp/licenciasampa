@@ -14,23 +14,28 @@ grupos.value = [
   {
     nome: 'obras',
     titulo: 'Obras, Regularização e Parcelamento',
+    href: 'obras-e-regularizacao',
   },
   {
     nome: 'seguranca',
     titulo: 'Segurança, Acessibilidade, e Equipamentos',
+    href: 'seguranca-acessibilidade-e-equipamentos',
   },
   {
     nome: 'eventos',
     titulo: 'Eventos',
+    href: 'eventos',
   },
   {
     nome: 'solicitacoes',
     titulo: 'Solicitações Gerais',
     subtitulo: '(Edificação, Loteamento, Logradouro e Atividades)',
+    href: 'solicitacoes-gerais',
   },
   {
     nome: 'outros',
     titulo: 'Outras Informações',
+    href: 'outros',
   }
 ];
 
@@ -195,6 +200,17 @@ onMounted(() => {
       </template>
     </div>
   </div>
+  <!-- Versão Mobile -->
+  <div class="row container-mobile-indice">
+    <template v-for="grupo, index in grupos">
+      <a :href="`${grupo.href}`" class="col-sm-6">
+        <div class="mobile-indice">
+          <InlineSvg :src="`/assets/svg/${grupo.nome}.svg`"></InlineSvg>
+          {{ grupo.titulo }}
+        </div>
+      </a>
+    </template>
+  </div>
 </template>
 
 <style>
@@ -356,5 +372,28 @@ onMounted(() => {
 
 .carousel-indice svg {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
+}
+
+.container-mobile-indice a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.4rem;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+}
+
+.mobile-indice {
+  border-radius: 5px;
+  background-color: #ededed;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 16px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-indice svg {
+  margin-right: 10px;
 }
 </style>
