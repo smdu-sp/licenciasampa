@@ -1,0 +1,3 @@
+<template>
+  <IndiceInterno></IndiceInterno>
+</template>

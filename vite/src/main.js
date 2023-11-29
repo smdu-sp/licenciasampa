@@ -1,8 +1,10 @@
 import { createApp } from 'vue';
 import './style.css';
 import AppIndice from './AppIndice.vue';
+import AppIndiceInterno from './AppIndiceInterno.vue';
 import AppAvisos from './AppAvisos.vue';
 import Indice from './components/Indice.vue';
+import IndiceInterno from './components/IndiceInterno.vue';
 import Avisos from './components/Avisos.vue';
 import {
     Carousel,
@@ -22,7 +24,20 @@ if (document.querySelector('#appIndice') !== null) {
     appIndice.component('Slide', Slide);
     appIndice.component('InlineSvg', InlineSvg);
 
-    appIndice.mount('#appIndice')
+    appIndice.mount('#appIndice');
+}
+
+if (document.querySelector('#appIndiceInterno') !== null) {
+    const appIndiceInterno = createApp(AppIndiceInterno);
+
+    appIndiceInterno.component('IndiceInterno', IndiceInterno);
+    appIndiceInterno.component('Carousel', Carousel);
+    appIndiceInterno.component('Navigation', Navigation);
+    appIndiceInterno.component('Pagination', Pagination);
+    appIndiceInterno.component('Slide', Slide);
+    appIndiceInterno.component('InlineSvg', InlineSvg);
+
+    appIndiceInterno.mount('#appIndiceInterno');
 }
 
 if (document.querySelector('#appAvisos') !== null) {

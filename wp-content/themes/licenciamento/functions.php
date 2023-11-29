@@ -17,6 +17,7 @@ if ( get_page_by_path( 'botoes' ) ) {
 }
 define( 'PATH_ROOT', get_template_directory() . '/' );
 define( 'PATH_AVISOS', PATH_ROOT . 'avisos/' );
+define( 'PATH_INDICE', PATH_ROOT . 'paginas-indice/' );
 define( 'PATH_INTERNAS', PATH_ROOT . 'paginas-internas/' );
 define( 'PATH_ASSETS', ABSPATH . 'assets/' );
 define( 'PATH_SVG', PATH_ASSETS . 'svg/' );
