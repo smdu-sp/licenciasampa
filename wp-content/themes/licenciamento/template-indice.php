@@ -20,6 +20,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                 ?>
             </div>
             <div class="container-interna">
+
                 <div class="container-conteudo">
                     <?php
                         include_once PATH_INDICE . 'indice-interno.php';
@@ -47,3 +48,10 @@ endif;
 
 get_footer();
 ?>
+<style>
+  .container-indice .container-carousel-indice, .indice-titulo{
+     display: none !important;
+
+    }    
+    
+</style>

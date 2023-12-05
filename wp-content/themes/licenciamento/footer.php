@@ -7,36 +7,17 @@
 
 ?>
 
-<footer id="rodape">
-	<?php include_once 'footer/nav.php' ?>
-</footer>
+<?php
+
+if ( is_front_page() ) :
+	echo dslc_hf_get_footer();
+else :
+	include_once 'footer/footer.php';
+endif;
+
+?>
 
 <?php wp_footer(); ?>
 
-<style>
-	#rodape {
-		padding-bottom:90px;
-		padding-top:90px;
-		background-color:#395aad;
-	}
-
-	.footer-nav {
-		padding-left: 0;
-	}
-
-	.footer-redes-sociais {
-		display: block;
-		width: 100px;
-		padding-left: 0;
-	}
-
-	.footer-redes-sociais li {
-		display: inline-block;
-		margin-right: 16px;
-	}
-
-</style>
-
 </body>
-
 </html>
