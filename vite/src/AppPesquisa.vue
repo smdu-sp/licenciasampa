@@ -1,0 +1,3 @@
+<template>
+  <Pesquisa></Pesquisa>
+</template>

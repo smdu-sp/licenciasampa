@@ -3,9 +3,11 @@ import './style.css';
 import AppIndice from './AppIndice.vue';
 import AppIndiceInterno from './AppIndiceInterno.vue';
 import AppAvisos from './AppAvisos.vue';
+import AppPesquisa from './AppPesquisa.vue';
 import Indice from './components/Indice.vue';
 import IndiceInterno from './components/IndiceInterno.vue';
 import Avisos from './components/Avisos.vue';
+import Pesquisa from './components/Pesquisa.vue';
 import {
     Carousel,
     Navigation,
@@ -51,4 +53,13 @@ if (document.querySelector('#appAvisos') !== null) {
     appAvisos.component('InlineSvg', InlineSvg);
 
     appAvisos.mount('#appAvisos');
+}
+
+if (document.querySelector('#appPesquisa') !== null) {
+    const appPesquisa = createApp(AppPesquisa);
+
+    appPesquisa.component('Pesquisa', Pesquisa);
+    appPesquisa.component('InlineSvg', InlineSvg);
+
+    appPesquisa.mount('#appPesquisa');
 }

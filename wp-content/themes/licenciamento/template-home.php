@@ -31,6 +31,7 @@ if (have_posts()) : while (have_posts()) : the_post();
             <button class="botao-azul" type="button" onclick="location.href='#'">Acesso Rápido</button>
           </div>
         </div>
+        <div id="appPesquisa" class="pesquisa-container"></div>
       </div>
     </div>
   </div>
