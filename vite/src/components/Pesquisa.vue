@@ -51,12 +51,15 @@ onMounted(() => {
   <div class="pesquisa-wrapper">
     <input v-model="inputPesquisa" class="input-pesquisa" type="text" name="pesquisa" id="pesquisa" placeholder="Pesquisar serviço" autocomplete="off">
     <div class="resultados-pesquisa">
-    <ul id="resultados-pesquisa" v-show="postsFiltroPesquisa">
-      <li v-for="post, index of postsFiltroPesquisa" :key="`titulo-${index}`">
-        <a :href="post.link">
-          <div v-html="post.titulo"></div>
-        </a>
-      </li>
+    <ul id="resultados-pesquisa">
+      <template v-if="inputPesquisa.length >= 3 && postsFiltroPesquisa.length > 0">
+        <li v-for="post, index of postsFiltroPesquisa" :key="`titulo-${index}`">
+          <a :href="post.link">
+            <div v-html="post.titulo"></div>
+          </a>
+        </li>
+      </template>
+      <li class="pesquisa-sem-resultados" v-if="inputPesquisa.length >= 3 && postsFiltroPesquisa.length == 0">Não foram encontrados resultados para sua pesquisa.</li>
     </ul>
     </div>
   </div>
@@ -119,31 +122,31 @@ input:focus::placeholder {
   cursor: pointer;
 }
 
-.resultados-pesquisa ul li a {
+.resultados-pesquisa ul li a, .pesquisa-sem-resultados {
   color: white;
   text-decoration: none;
 }
 
-.resultados-pesquisa ul li a div {
+.resultados-pesquisa ul li a div, .pesquisa-sem-resultados {
   width: 100%;
   padding: 10px 16px;
 }
 
-.resultados-pesquisa ul li:hover a div {
-  background-color: rgba(57,90,173, 0.8);
+.resultados-pesquisa ul li:hover a div, .pesquisa-sem-resultados {
+  background-color: rgba(57,90,173, 0.90);
 }
 
 .resultados-pesquisa ul li:hover a {
   text-decoration: underline;
 }
 
-.resultados-pesquisa ul li:first-child a div {
+.resultados-pesquisa ul li:first-child a div, .pesquisa-sem-resultados {
   padding-top: 20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-.resultados-pesquisa ul li:last-child a div {
+.resultados-pesquisa ul li:last-child a div, .pesquisa-sem-resultados {
   padding-bottom: 20px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
