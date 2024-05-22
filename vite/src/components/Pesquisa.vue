@@ -15,9 +15,14 @@ const postsFiltroPesquisa = computed(() => {
     const consultaNormalizada = inputPesquisa.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleUpperCase('pt-BR')
     
     for (const post of postsAssuntos.value) {
-      console.log(post.titulo)
-      if (post.titulo.includes(consultaNormalizada) && postsFiltrados.length <= postsPorPesquisa) {
-        postsFiltrados.push(post)
+      if (postsFiltrados.length <= postsPorPesquisa) {
+        if (post.titulo.includes(consultaNormalizada)) {
+          postsFiltrados.push(post)
+        }
+
+        if (normalizarTexto(post.meta.grupo).includes(consultaNormalizada)) {
+          postsFiltrados.push(post)
+        }
       }
     }
   }
@@ -63,7 +68,7 @@ function normalizarTexto(string) {
       <template v-if="inputPesquisa.length >= 3 && postsFiltroPesquisa.length > 0">
         <li v-for="post, index of postsFiltroPesquisa" :key="`titulo-${index}`">
           <a :href="post.link">
-            <div v-html="post.titulo"></div>
+            <div v-html="post.title.rendered"></div>
           </a>
         </li>
       </template>
