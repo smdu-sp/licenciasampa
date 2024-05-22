@@ -2,6 +2,9 @@
 import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 
+// Parser para a conversão de entidades HTML
+const parser = new DOMParser
+
 const inputPesquisa = ref('')
 const postsAssuntos = ref([])
 const postsPorPesquisa = 8
@@ -12,12 +15,8 @@ const postsFiltroPesquisa = computed(() => {
     const consultaNormalizada = inputPesquisa.value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleUpperCase('pt-BR')
     
     for (const post of postsAssuntos.value) {
-      const tituloNormalizado = post.title.rendered.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleUpperCase('pt-BR')
-      
-      if (tituloNormalizado.includes(consultaNormalizada) && postsFiltrados.length <= postsPorPesquisa) {
-        const parser = new DOMParser
-        const dom = parser.parseFromString(post.title.rendered, 'text/html')
-        post.titulo = dom.body.textContent
+      console.log(post.titulo)
+      if (post.titulo.includes(consultaNormalizada) && postsFiltrados.length <= postsPorPesquisa) {
         postsFiltrados.push(post)
       }
     }
@@ -34,17 +33,26 @@ onMounted(() => {
 
       for (const post of postsRaw) {
         if (post.meta.grupo && post.meta.priorizar) {
+          post.titulo = normalizarTexto(post.title.rendered)
+
           postsAssuntos.value.push(post)
         }
       }
       
       for (const post of postsRaw) {
         if (post.meta.grupo && !post.meta.priorizar) {
+          post.titulo = normalizarTexto(post.title.rendered)
+
           postsAssuntos.value.push(post)
         }
       }
     })
 })
+
+function normalizarTexto(string) {
+  const dom = parser.parseFromString(string, 'text/html')
+  return dom.body.textContent.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleUpperCase('pt-BR')
+}
 </script>
 
 <template>
